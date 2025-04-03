@@ -13,10 +13,9 @@ int main(){
         cout << "4 - Paiimti duomenis is failo " << endl;
         cout << "5 - Sugeneruoti nauja duomenu faila " << endl;
         cout << "6 - Surusiuoti faila i vargsiukus ir kietiakus " << endl;        
-        cout << "7 - Veikimo laiko testavimas su vector, list ir deque " << endl;
-        cout << "8 - Baigti darba ir spausdinti " << endl;
+        cout << "7 - Baigti darba ir spausdinti " << endl;
         try {
-            if (!(cin>>input)||input<1 || input>8){
+            if (!(cin>>input)||input<1 || input>7){
                 cin.clear();
                 cin.ignore();
                 throw "Ivestas neteisingas simbolis";
@@ -53,42 +52,6 @@ int main(){
                     break;
 
                 case 7:
-                    while ((true)){
-                        cout << "Iveskite kuri duomenu tipa testuoti " << endl;
-                        cout << "1 - Vector " << endl;
-                        cout << "2 - List " << endl;
-                        cout << "3 - Deque " << endl;
-                        try {
-                            if (!(cin>>input)||input<1 || input>3){
-                                cin.clear();
-                                cin.ignore();
-                                throw "Ivestas neteisingas simbolis";
-                            } 
-                        
-                        switch(input){
-                            case 1:
-                                TestVector();
-                                return 0;
-            
-                            case 2:
-                                TestList();
-                                return 0;
-            
-                            case 3:
-                                TestDeque();
-                                return 0;
-                            default:
-                                cout << "Ivedete neteisinga simobli, pabandykit vel! :)" << endl;
-                                break;
-                    }
-                    }   
-                    catch (char const *x){
-                        cout << x << endl;
-                        continue;
-                    }
-                
-                }
-                case 8:
                     cout << "Pagal ka isrusiuoti duomenis?" << endl;
                     compare(A);
                     spausdina(A);

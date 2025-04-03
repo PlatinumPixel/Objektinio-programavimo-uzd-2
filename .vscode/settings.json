@@ -68,6 +68,7 @@
         "filesystem": "cpp",
         "random": "cpp",
         "deque": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "numeric": "cpp"
     }
 }

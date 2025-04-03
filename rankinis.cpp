@@ -1,11 +1,13 @@
 #include "bibl.h"
 
 void rankinis(vector <stud> &A){
-    stud temp; 
-    string input; 
+    string input;
+    string vardas;
+    string pavard;
 
     cout << "Iveskite studento Varda ir pavarde ";
-    cin >> temp.vard >> temp.pava;
+    cin >> vardas >> pavard;
+    stud temp(vardas,pavard);
 
     cout << "Veskite studento namu darbo pazymius arba N, kad sustoti ";
     
@@ -13,12 +15,11 @@ void rankinis(vector <stud> &A){
         try{
             cin >> input;
             if (input == "N" || input == "n") break;
-            int grade = std::stoi(input);
-            if (grade < 0 || grade > 10){
+            int paz = std::stoi(input);
+            if (paz < 0 || paz > 10){
                 throw "Ivestas neteisingas simbolis";
             }
-            temp.tarp.push_back(grade);
-            temp.tarpsum += grade;
+            temp.addTarpPazymys(paz);
         }
         catch (const std::invalid_argument&){
             cout << "Ivestas neteisingas simbolis" << endl;
@@ -30,8 +31,6 @@ void rankinis(vector <stud> &A){
         }
     }
 
-    std::sort(temp.tarp.begin(), temp.tarp.end());
-
     cout << "Iveskite studento egzamino rezultata ";
     while (true){
         try{
@@ -40,7 +39,7 @@ void rankinis(vector <stud> &A){
             if (egz < 0 || egz > 10){
                 throw "Ivestas neteisingas simbolis";
             }
-            temp.egz = egz;
+            temp.setEgzaminas(egz);
             break;
         }
         catch (const std::invalid_argument&){
@@ -53,15 +52,6 @@ void rankinis(vector <stud> &A){
         }
     }
 
-    temp.tarpvid = double(temp.tarpsum / temp.tarp.size());
-    if (temp.tarp.size() % 2 == 0){
-        temp.tarpmed = (temp.tarp[(temp.tarp.size() / 2) - 1] + temp.tarp[temp.tarp.size() / 2]) / 2;
-    }
-    else {
-        temp.tarpmed = temp.tarp[temp.tarp.size() / 2];
-    }
-
-    temp.galutinisvid = (temp.tarpvid * 0.4) + (temp.egz * 0.6);
-    temp.galutinismed = temp.tarpmed * 0.4 + temp.egz * 0.6;
+    temp.calculateGalutinis();
     A.push_back(temp);    
 }

@@ -27,16 +27,16 @@ public:
       }
       egz=tarp.back();
       tarp.pop_back();
-      calculateGalutinis();
     }
 
     // Setters
-    void setVardas(const string& vardas) { vard = vardas; }
-    void setPavarde(const string& pavarde) { pava = pavarde; }
+    inline void setVardas(const string& vardas) { vard = vardas; }
+    inline void setPavarde(const string& pavarde) { pava = pavarde; }
     void addTarpPazymys(int paz) {
+        if (tarp.capacity() == 0) tarp.reserve(10);
         tarp.push_back(paz);
     }
-    void setEgzaminas(double egzaminas) { egz = egzaminas; }
+    inline void setEgzaminas(double egzaminas) { egz = egzaminas; }
 
     // Getters
     inline string getVardas() const { return vard; }
@@ -58,7 +58,6 @@ public:
         galutinisvid = (tarpvid * 0.4) + (egz * 0.6);
         galutinismed = (tarpmed * 0.4) + (egz * 0.6);
     }
-
 
 };
 

@@ -4,7 +4,6 @@ void rusiavimas(){
     string failas;
     vector <stud> visi;
     vector <stud> nuskriausti;
-    vector <stud> kietiakai;
     bool vid;
     double visaTrukme=0;
     cout << "Iveskite failo pavadinima (pvz. kursiokai.txt)" << endl;
@@ -54,7 +53,7 @@ void rusiavimas(){
         std::istringstream line(eil);
         stud temp(line);
         temp.calculateGalutinis();
-        visi.push_back(temp);
+        visi.push_back(std::move(temp));
 
     }
     df.close();
@@ -84,7 +83,6 @@ void rusiavimas(){
             }), visi.end());
         }
     }
-    visi.clear();
 
     visaTrukme+=t.elapsed();
     cout << "Mokinius isrusiuoti i atskirus konteinerius uztruko " << t.elapsed() << endl;
@@ -94,13 +92,13 @@ void rusiavimas(){
     cout << "Pagal ka isrikiuoti nuskriaustu duomenis?" << endl;
     compare(nuskriausti,trukme);
     cout << "Pagal ka isrikiuoti kietiaku duomenis?" << endl;
-    compare(kietiakai,trukme);
+    compare(visi,trukme);
     visaTrukme+=trukme;
     cout << "Duomenis isrikiuoti uztruko " << trukme << endl;
 
     t.reset();
     spausdinaFaila(nuskriausti,"nuskriausti "+failas);
-    spausdinaFaila(kietiakai,"kietiakai "+failas);
+    spausdinaFaila(visi,"kietiakai "+failas);
     visaTrukme+=t.elapsed();
     cout << "Duomenis atspausdinti uztruko "<< t.elapsed()<< endl;
     cout << "Isviso uztruko: "<< visaTrukme<< endl;  

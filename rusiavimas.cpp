@@ -63,7 +63,7 @@ void rusiavimas(){
     ///plz fix kazkodel cia zymiai leciau veikia negu turetu(galimai destructor ir move reik?)
     if (vid==1){
         for (int i=0;i<visi.size();i++){
-            std::remove_copy_if(visi.begin(), visi.end(), std::back_inserter(nuskriausti), [](const stud &s) {
+            std::remove_copy_if(visi.begin(), visi.end(), std::back_inserter(nuskriausti), [](const stud &s) {  //cia bak inserter nes td nereik koreguot nuskriaustu size paciam
                 return s.getGalutinisVid() >= 5.0;
             });
         

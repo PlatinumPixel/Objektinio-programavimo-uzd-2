@@ -60,7 +60,7 @@ void rusiavimas(){
     visaTrukme+=t.elapsed();
     cout << "Duomenis nuskaityti uztruko " << visaTrukme << endl;
     t.reset();
-
+    ///plz fix kazkodel cia zymiai leciau veikia negu turetu(galimai destructor ir move reik?)
     if (vid==1){
         for (int i=0;i<visi.size();i++){
             std::remove_copy_if(visi.begin(), visi.end(), std::back_inserter(nuskriausti), [](const stud &s) {

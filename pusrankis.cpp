@@ -7,7 +7,7 @@ void pusrankis(vector <stud> &A){
     string vardas;
     string pavard;
 
-    cout << "Iveskite studento Varda ir pavarde ";
+    cout << "Iveskite studento Varda ir pa ";
     cin >> vardas >> pavard;
     stud temp(vardas,pavard);
     for (int i=0;i<dist(mt);i++){

@@ -16,7 +16,7 @@ private:
     double galutinismed = 0;
 
 public:
-    // Constructors
+    // Construktoriai
     stud() = default;
     stud(const string& vardas, const string& pavarde) : vard(vardas), pava(pavarde) {}
     stud(std::istringstream &line){
@@ -29,7 +29,13 @@ public:
       tarp.pop_back();
     }
 
-    // Setters
+    //Destruktorius
+    ~stud(){
+      tarp.clear();
+      tarp.shrink_to_fit();
+    }
+
+    // Setteriai
     inline void setVardas(const string& vardas) { vard = vardas; }
     inline void setPavarde(const string& pavarde) { pava = pavarde; }
     void addTarpPazymys(int paz) {
@@ -38,13 +44,13 @@ public:
     }
     inline void setEgzaminas(double egzaminas) { egz = egzaminas; }
 
-    // Getters
+    // Getteriai
     inline string getVardas() const { return vard; }
     inline string getPavarde() const { return pava; }
     double getGalutinisVid() const { return galutinisvid; }
     double getGalutinisMed() const { return galutinismed; }
 
-    // Calculation functions
+    // Galutinio apskaiciavimas
     void calculateGalutinis() {
       if (!tarp.empty()) {
         tarpvid = accumulate(tarp.begin(),tarp.end(),0) / double(tarp.size());

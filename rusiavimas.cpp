@@ -61,27 +61,24 @@ void rusiavimas(){
     cout << "Duomenis nuskaityti uztruko " << visaTrukme << endl;
     t.reset();
     ///plz fix kazkodel cia zymiai leciau veikia negu turetu(galimai destructor ir move reik?)
-    if (vid==1){
-        for (int i=0;i<visi.size();i++){
-            std::remove_copy_if(visi.begin(), visi.end(), std::back_inserter(nuskriausti), [](const stud &s) {  //cia bak inserter nes td nereik koreguot nuskriaustu size paciam
-                return s.getGalutinisVid() >= 5.0;
-            });
-        
-            visi.erase(std::remove_if(visi.begin(), visi.end(), [](const stud &s) {
-                return s.getGalutinisVid() < 5.0;
-            }), visi.end());
-        }
-    }   
-    else{ 
-        for (int i=0;i<visi.size();i++){
-            std::remove_copy_if(visi.begin(), visi.end(), std::back_inserter(nuskriausti), [](const stud &s) {
-                return s.getGalutinisMed() >= 5.0;
-            });
-        
-            visi.erase(std::remove_if(visi.begin(), visi.end(), [](const stud &s) {
-                return s.getGalutinisMed() < 5.0;
-            }), visi.end());
-        }
+    if (vid==1){   
+        auto it = std::partition(visi.begin(), visi.end(), [](const stud &s)
+        {
+            return s.getGalutinisVid() >= 5.0; //
+        });
+        nuskriausti.insert(nuskriausti.end(), it, visi.end());
+        visi.erase(it, visi.end());
+        visi.shrink_to_fit();
+    }
+    
+    else if(vid==0){
+        auto it = std::partition(visi.begin(), visi.end(), [](const stud &s)
+        {
+            return s.getGalutinisMed() >= 5.0; //
+        });
+        nuskriausti.insert(nuskriausti.end(), it, visi.end());
+        visi.erase(it, visi.end());
+        visi.shrink_to_fit();
     }
 
     visaTrukme+=t.elapsed();

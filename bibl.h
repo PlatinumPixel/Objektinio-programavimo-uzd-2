@@ -17,6 +17,7 @@ void failoNusk (vector <stud> &);
 void failoGen();
 void rusiavimas();
 void spausdinaFaila(vector <stud> &A, string);
+void test();
 
 bool compVardas(stud &, stud &);
 bool compPavard(stud &, stud &);

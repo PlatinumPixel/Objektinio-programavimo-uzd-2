@@ -17,17 +17,51 @@ private:
 
 public:
     // Construktoriai
-    stud() = default;
-    stud(const string& vardas, const string& pavarde) : vard(vardas), pava(pavarde) {}
+    stud() {
+     vard="";
+     pava="";
+     tarpvid=0;
+     tarpmed = 0;
+     egz = 0;
+     galutinisvid = 0;
+     galutinismed = 0;
+    };
+
+    stud(const string& vard, const string& pava) : vard(vard), pava(pava) {}
+
     stud(std::istringstream &line){
-      int paz;
+      int tarp;
       line >> vard >> pava;
-      while (line >> paz){
-        addTarpPazymys(paz);
+      while (line >> tarp){
+        addTarptarpymys(tarp);
       }
       egz=tarp.back();
       tarp.pop_back();
     }
+
+    //Copy constructor
+    stud::stud(const stud& kitas) {
+      vard = kitas.vard;
+      pava = kitas.pava;
+      tarp = kitas.tarp;
+      egz = kitas.egz;
+      galutinisvid = kitas.galutinisvid;
+      galutinismed = kitas.galutinismed;
+  }
+
+    //Move constructor
+    stud::stud(stud&& kitas) noexcept {
+      vard = move(kitas.vard);
+      pava = move(kitas.pava);
+      tarp = move(kitas.tarp);
+      egz = kitas.egz;
+      galutinisvid = kitas.galutinisvid;
+      galutinismed = kitas.galutinismed;
+  
+      kitas.egz = 0;
+      kitas.galutinisvid = 0.0;
+      kitas.galutinismed = 0.0;
+  }
 
     //Destruktorius
     ~stud(){
@@ -36,17 +70,17 @@ public:
     }
 
     // Setteriai
-    inline void setVardas(const string& vardas) { vard = vardas; }
-    inline void setPavarde(const string& pavarde) { pava = pavarde; }
-    void addTarpPazymys(int paz) {
+    inline void setvard(const string& vard) { vard = vard; }
+    inline void setpava(const string& pava) { pava = pava; }
+    void addTarptarpymys(int tarp) {
         if (tarp.capacity() == 0) tarp.reserve(10);
-        tarp.push_back(paz);
+        tarp.push_back(tarp);
     }
     inline void setEgzaminas(double egzaminas) { egz = egzaminas; }
 
     // Getteriai
-    inline string getVardas() const { return vard; }
-    inline string getPavarde() const { return pava; }
+    inline string getvard() const { return vard; }
+    inline string getpava() const { return pava; }
     double getGalutinisVid() const { return galutinisvid; }
     double getGalutinisMed() const { return galutinismed; }
 
@@ -63,6 +97,36 @@ public:
       }
         galutinisvid = (tarpvid * 0.4) + (egz * 0.6);
         galutinismed = (tarpmed * 0.4) + (egz * 0.6);
+    }
+
+    //Operatoriai
+    // Copy operator
+    stud& operator=(const stud& kitas) {
+      if (this != &kitas) {
+          vard = kitas.vard;
+          pava = kitas.pava;
+          tarp = kitas.tarp;
+          egz = kitas.egz;
+          galutinisvid = kitas.galutinisvid;
+          galutinismed = kitas.galutinismed;
+      }
+      return *this;
+  }
+    //Move operator
+    stud& stud::operator=(stud&& kitas) noexcept {
+      if (this != &kitas){
+        vard = move(kitas.vard);
+        pava = move(kitas.pava);
+        tarp = move(kitas.tarp);
+        egz = kitas.egz;
+        galutinisvid = kitas.galutinisvid;
+        galutinismed = kitas.galutinismed;
+
+        kitas.egz = 0;
+        kitas.galutinisvid = 0.0;
+        kitas.galutinismed = 0.0;
+      }
+      return *this;
     }
 
 };

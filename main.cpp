@@ -14,8 +14,9 @@ int main(){
         cout << "5 - Sugeneruoti nauja duomenu faila " << endl;
         cout << "6 - Surusiuoti faila i vargsiukus ir kietiakus " << endl;        
         cout << "7 - Baigti darba ir spausdinti " << endl;
+        cout << "8 - Testavimo atvejai " << endl;
         try {
-            if (!(cin>>input)||input<1 || input>7){
+            if (!(cin>>input)||input<1 || input>8){
                 cin.clear();
                 cin.ignore();
                 throw "Ivestas neteisingas simbolis";
@@ -55,6 +56,9 @@ int main(){
                     cout << "Pagal ka isrusiuoti duomenis?" << endl;
                     compare(A);
                     spausdina(A);
+                    return 0;
+                case 8:
+                    test();
                     return 0;
                 default:
                     cout << "Ivedete neteisinga simobli, pabandykit vel! :)" << endl;

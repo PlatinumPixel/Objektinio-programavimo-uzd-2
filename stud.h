@@ -78,7 +78,7 @@ public:
     }
     inline void setEgzaminas(double egzaminas) { egz = egzaminas; }
     inline void setVid(double vid) { galutinisvid = vid; }
-    inline void setMed(double med) { galutinisvid = med; }
+    inline void setMed(double med) { galutinismed = med; }
 
     // Getteriai
     inline string getVardas() const { return vard; }

@@ -16,7 +16,6 @@ void testSettersAndGetters() {
     s.setpava("Jonaitis");
     s.setEgzaminas(9.5);
     s.setVid(8.0);
-    cout << s.getGalutinisVid();
     s.setMed(8.5);
     
     assert(s.getVardas() == "Jonas");
@@ -84,12 +83,14 @@ void testOutput() {
 
 void testInput() {
     stud original;
+    cout << "iveskite varda ir pavarde\n";
     cin >> original;
+    original.calculateGalutinis();
     cout << original;
     std::cout << "Input testas sekmingas!\n";
 }
 
-int main() {
+void test() {
     testDefaultConstructor();
     testSettersAndGetters();
     testCopyConstructor();
@@ -100,5 +101,4 @@ int main() {
     testInput();
     
     std::cout << "\nAll tests passed!\n";
-    return 0;
 }

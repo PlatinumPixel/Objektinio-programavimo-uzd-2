@@ -25,8 +25,9 @@ private:
 
 public:
 
-    using iterator = T*;               // Iterator is a pointer to T
+    using iterator       = T*;               // Iterator is a pointer to T
     using const_iterator = const T*;
+    using size_type      = std::size_t;
 
     // Constructor
     ManoVektorius() : data(nullptr), sz(0), cap(0) {}
@@ -203,7 +204,7 @@ public:
         return data + index;
     }
 
-    template< class InputIt >
+    template< class InputIt, typename = std::enable_if_t<!std::is_integral_v<InputIt>> >
     iterator insert( const_iterator pos, InputIt first, InputIt last ){
         if (pos < data || pos > data + sz) {
             throw std::out_of_range("Iterator out of range");
@@ -223,7 +224,7 @@ public:
         return data + index;
     }
 
-    
+
 
 
     void push_back(const T& value) {

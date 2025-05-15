@@ -224,7 +224,22 @@ public:
         return data + index;
     }
 
-
+    template< class... Args >
+    iterator emplace( const_iterator pos, Args&&... args ){
+        if (pos < data || pos > data + sz) {
+            throw std::out_of_range("Iterator out of range");
+        }
+        size_t index = pos - data;
+        if (sz >= cap) {
+            reallocate(cap == 0 ? 1 : cap * 2);
+        }
+        for (size_t i = sz; i > index; --i) {
+            data[i] = std::move(data[i - 1]);
+        }
+        new (&data[index]) T(std::forward<Args>(args)...);
+        ++sz;
+        return data + index;
+    }
 
 
     void push_back(const T& value) {

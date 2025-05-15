@@ -248,7 +248,72 @@ void beginEndTest(){
     for (auto it = const_v.crbegin(); it != const_v.crend(); ++it) {
         std::cout << *it << " ";
     }
-    std::cout << "\nExpected: 30 20 10\n\n";}
+    std::cout << "\nExpected: 30 20 10\n\n";
+}
+
+void operatorTest(){
+        // Test 1: Equality and inequality operators
+    std::cout << "Test 1: Equality and inequality operators\n";
+    ManoVektorius<int> v1, v2, v3;
+    v1.push_back(1);
+    v1.push_back(2);
+    v1.push_back(3);
+
+    v2.push_back(1);
+    v2.push_back(2);
+    v2.push_back(3);
+
+    v3.push_back(1);
+    v3.push_back(2);
+
+    std::cout << "v1 == v2: " << (v1 == v2 ? "true" : "false") << "\n"; // Expected: true
+    std::cout << "v1 != v2: " << (v1 != v2 ? "true" : "false") << "\n"; // Expected: false
+    std::cout << "v1 == v3: " << (v1 == v3 ? "true" : "false") << "\n"; // Expected: false
+    std::cout << "v1 != v3: " << (v1 != v3 ? "true" : "false") << "\n"; // Expected: true
+    std::cout << "\n";
+
+    // Test 2: Less than and less than or equal operators
+    std::cout << "Test 2: Less than and less than or equal operators\n";
+    ManoVektorius<int> v4, v5;
+    v4.push_back(1);
+    v4.push_back(2);
+    v4.push_back(3);
+
+    v5.push_back(1);
+    v5.push_back(2);
+    v5.push_back(4);
+
+    std::cout << "v4 < v5: " << (v4 < v5 ? "true" : "false") << "\n";   // Expected: true
+    std::cout << "v4 <= v5: " << (v4 <= v5 ? "true" : "false") << "\n"; // Expected: true
+    std::cout << "v5 < v4: " << (v5 < v4 ? "true" : "false") << "\n";   // Expected: false
+    std::cout << "v5 <= v4: " << (v5 <= v4 ? "true" : "false") << "\n"; // Expected: false
+    std::cout << "\n";
+
+    // Test 3: Greater than and greater than or equal operators
+    std::cout << "Test 3: Greater than and greater than or equal operators\n";
+    std::cout << "v5 > v4: " << (v5 > v4 ? "true" : "false") << "\n";   // Expected: true
+    std::cout << "v5 >= v4: " << (v5 >= v4 ? "true" : "false") << "\n"; // Expected: true
+    std::cout << "v4 > v5: " << (v4 > v5 ? "true" : "false") << "\n";   // Expected: false
+    std::cout << "v4 >= v5: " << (v4 >= v5 ? "true" : "false") << "\n"; // Expected: false
+    std::cout << "\n";
+
+    // Test 4: Comparison of vectors with different sizes
+    std::cout << "Test 4: Comparison of vectors with different sizes\n";
+    ManoVektorius<int> v6, v7;
+    v6.push_back(1);
+    v6.push_back(2);
+
+    v7.push_back(1);
+    v7.push_back(2);
+    v7.push_back(3);
+
+    std::cout << "v6 < v7: " << (v6 < v7 ? "true" : "false") << "\n";   // Expected: true
+    std::cout << "v6 <= v7: " << (v6 <= v7 ? "true" : "false") << "\n"; // Expected: true
+    std::cout << "v7 > v6: " << (v7 > v6 ? "true" : "false") << "\n";   // Expected: true
+    std::cout << "v7 >= v6: " << (v7 >= v6 ? "true" : "false") << "\n"; // Expected: true
+    std::cout << "v6 > v7: " << (v6 > v7 ? "true" : "false") << "\n";   // Expected: false
+    std::cout << "v6 >= v7: " << (v6 >= v7 ? "true" : "false") << "\n"; // Expected: false
+}
 
 int main() {
     insertTest();
@@ -258,6 +323,7 @@ int main() {
     dataTest();
     frontBackTest();
     beginEndTest();
+    operatorTest();
     return 0;
 }
 

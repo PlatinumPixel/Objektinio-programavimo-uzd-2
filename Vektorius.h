@@ -310,6 +310,51 @@ public:
         return data[index];
     }
 
+    bool operator==( const ManoVektorius<T>& other ) const {
+        if (sz != other.sz) return false;
+        for (size_t i = 0; i < sz; ++i) {
+            if (data[i] != other.data[i]) return false;
+        }
+        return true;
+    }
+
+    bool operator!=( const ManoVektorius<T>& other ) const {
+        return !(*this == other);
+    }
+
+    bool operator<( const ManoVektorius<T>& other ) const {
+        for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
+            if (data[i] < other.data[i]) return true;
+            if (data[i] > other.data[i]) return false;
+        }
+        return sz < other.sz;
+    }
+
+    bool operator<=( const ManoVektorius<T>& other ) const {
+        for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
+            if (data[i] < other.data[i]) return true;
+            if (data[i] > other.data[i]) return false;
+        }
+        return sz <= other.sz;
+    }
+
+    bool operator>( const ManoVektorius<T>& other ) const {
+        for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
+            if (data[i] < other.data[i]) return false;
+            if (data[i] > other.data[i]) return true;
+        }
+        return sz > other.sz;
+    }    
+
+    bool operator>=( const ManoVektorius<T>& other ) const {
+        for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
+            if (data[i] < other.data[i]) return false;
+            if (data[i] > other.data[i]) return true;
+        }
+        return sz >= other.sz;
+    } 
+
+
     iterator begin() { return data; }
     const_iterator begin() const { return data; }
     const_iterator cbegin() const { return data; }
@@ -358,6 +403,8 @@ public:
     const T* storage() const {
         return data;
     }
+
+
 };
 
 #endif // VEKTORIUS_H

@@ -1,6 +1,6 @@
 #include "bibl.h"
 
-void rankinis(vector <stud> &A){
+void rankinis(Vektorius <stud> &A){
     string input;
     string vardas;
     string pavard;

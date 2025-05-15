@@ -1,6 +1,6 @@
 #include "bibl.h"
 
-void pusrankis(vector <stud> &A){
+void pusrankis(Vektorius <stud> &A){
     std::random_device rd;
     std::mt19937 mt(rd());
     std::uniform_int_distribution <int> dist(0,10);

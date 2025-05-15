@@ -3,7 +3,7 @@
 string Vard[5] {"Jonas", "Vytautas", "Antanas", "Tomas", "Juozas"};
 string Pava[5] {"Kazlauskas", "Stankevicius", "Petrauskas", "Janauskas", "Zukauskas"};
 
-void automatiskas (vector <stud> &A){
+void automatiskas (Vektorius <stud> &A){
     std::random_device rd;
     std::mt19937 mt(rd());
     std::uniform_int_distribution<int> vardui(0,4);

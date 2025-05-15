@@ -4,10 +4,11 @@
 #include "std.h"
 #include <numeric>
 #include "Zmogus.h"
+#include "Vektorius.h"
 
 class stud : public Zmogus {
 private:
-    vector<int> tarp;
+    Vektorius<int> tarp;
     double tarpvid = 0;
     double tarpmed = 0;
     double egz = 0;
@@ -96,7 +97,7 @@ public:
     inline void setMed(double med) { galutinismed = med; }
 
     // Getter methods
-    vector<int>& getTarp() { return tarp; }
+    Vektorius<int>& getTarp() { return tarp; }
     double getEgz() const { return egz; }
     double getGalutinisVid() const { return galutinisvid; }
     double getGalutinisMed() const { return galutinismed; }
@@ -104,7 +105,7 @@ public:
     // Calculate final grades
     void calculateGalutinis() {
         if (!tarp.empty()) {
-            tarpvid = accumulate(tarp.begin(), tarp.end(), 0) / double(tarp.size());
+            tarpvid = std::accumulate(tarp.begin(), tarp.end(), 0) / double(tarp.size());
             std::sort(tarp.begin(), tarp.end());
             if (tarp.size() % 2 == 0) {
                 tarpmed = (tarp[tarp.size() / 2 - 1] + tarp[tarp.size() / 2]) / 2.0;

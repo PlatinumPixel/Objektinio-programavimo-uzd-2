@@ -1,6 +1,6 @@
 #include "bibl.h"
 
-void compare(vector <stud> &A){
+void compare(Vektorius <stud> &A){
     while(true){
         cout << "1 - Pagal Varda " << endl;
         cout << "2 - Pagal Pavarde " << endl;
@@ -40,7 +40,7 @@ void compare(vector <stud> &A){
     }
 }
 
-void compare(vector <stud> &A,double &time){
+void compare(Vektorius <stud> &A,double &time){
     Timer laik;
     while(true){
         cout << "1 - Pagal Varda " << endl;

@@ -1,6 +1,6 @@
 #include "bibl.h"
 
-void failoNusk (vector <stud> &A){
+void failoNusk (Vektorius <stud> &A){
     string failas;
 
     cout << "Iveskite failo pavadinima (pvz. kursiokai.txt)" << endl;

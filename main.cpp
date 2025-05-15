@@ -1,6 +1,6 @@
 #include "bibl.h"
 
-vector <stud> A;
+Vektorius <stud> A;
 
 int main(){  
     int input;

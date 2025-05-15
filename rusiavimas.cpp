@@ -2,8 +2,8 @@
 
 void rusiavimas(){
     string failas;
-    vector <stud> visi;
-    vector <stud> nuskriausti;
+    Vektorius <stud> visi;
+    Vektorius <stud> nuskriausti;
     bool vid;
     double visaTrukme=0;
     cout << "Iveskite failo pavadinima (pvz. kursiokai.txt)" << endl;

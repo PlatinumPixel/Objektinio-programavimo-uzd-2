@@ -7,7 +7,7 @@
 #include <iterator>
 
 template <typename T>
-class ManoVektorius {
+class Vektorius {
 private:
 
     T* data;
@@ -35,15 +35,15 @@ public:
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
     // Constructor
-    ManoVektorius() : data(nullptr), sz(0), cap(0) {}
+    Vektorius() : data(nullptr), sz(0), cap(0) {}
 
     // Destructor
-    ~ManoVektorius() {
+    ~Vektorius() {
         delete[] data;
     }
 
     // Copy constructor
-    ManoVektorius(const ManoVektorius& other) {
+    Vektorius(const Vektorius& other) {
         sz = other.sz;
         cap = other.cap;
         data = new T[cap];
@@ -53,7 +53,7 @@ public:
     }
 
     // Copy assignment
-    ManoVektorius& operator=(const ManoVektorius& other) {
+    Vektorius& operator=(const Vektorius& other) {
         if (this != &other) {
             delete[] data;
             sz = other.sz;
@@ -67,7 +67,7 @@ public:
     }
 
     // Move constructor
-    ManoVektorius(ManoVektorius&& other) noexcept {
+    Vektorius(Vektorius&& other) noexcept {
         data = other.data;
         sz = other.sz;
         cap = other.cap;
@@ -76,7 +76,7 @@ public:
     }
 
     // Move assignment
-    ManoVektorius& operator=(ManoVektorius&& other) noexcept {
+    Vektorius& operator=(Vektorius&& other) noexcept {
         if (this != &other) {
             delete[] data;
             data = other.data;
@@ -89,7 +89,7 @@ public:
     }
     
 
-    void swap(ManoVektorius& other) {
+    void swap(Vektorius& other) {
         std::swap(data, other.data);
         std::swap(sz, other.sz);
         std::swap(cap, other.cap);
@@ -253,7 +253,6 @@ public:
             reallocate(cap == 0 ? 1 : cap * 2);
         }
         data[sz++] = value;
-        cout << "Pushed back " << value << endl;
     }
 
     void pop_back() {
@@ -310,7 +309,7 @@ public:
         return data[index];
     }
 
-    bool operator==( const ManoVektorius<T>& other ) const {
+    bool operator==( const Vektorius<T>& other ) const {
         if (sz != other.sz) return false;
         for (size_t i = 0; i < sz; ++i) {
             if (data[i] != other.data[i]) return false;
@@ -318,11 +317,11 @@ public:
         return true;
     }
 
-    bool operator!=( const ManoVektorius<T>& other ) const {
+    bool operator!=( const Vektorius<T>& other ) const {
         return !(*this == other);
     }
 
-    bool operator<( const ManoVektorius<T>& other ) const {
+    bool operator<( const Vektorius<T>& other ) const {
         for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
             if (data[i] < other.data[i]) return true;
             if (data[i] > other.data[i]) return false;
@@ -330,7 +329,7 @@ public:
         return sz < other.sz;
     }
 
-    bool operator<=( const ManoVektorius<T>& other ) const {
+    bool operator<=( const Vektorius<T>& other ) const {
         for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
             if (data[i] < other.data[i]) return true;
             if (data[i] > other.data[i]) return false;
@@ -338,7 +337,7 @@ public:
         return sz <= other.sz;
     }
 
-    bool operator>( const ManoVektorius<T>& other ) const {
+    bool operator>( const Vektorius<T>& other ) const {
         for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
             if (data[i] < other.data[i]) return false;
             if (data[i] > other.data[i]) return true;
@@ -346,7 +345,7 @@ public:
         return sz > other.sz;
     }    
 
-    bool operator>=( const ManoVektorius<T>& other ) const {
+    bool operator>=( const Vektorius<T>& other ) const {
         for (size_t i = 0; i < std::min(sz, other.sz); ++i) {
             if (data[i] < other.data[i]) return false;
             if (data[i] > other.data[i]) return true;

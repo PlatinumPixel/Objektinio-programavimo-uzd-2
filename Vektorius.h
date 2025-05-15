@@ -153,6 +153,77 @@ public:
         return data + start;
     }
 
+    iterator insert( const_iterator pos, const T& value ){
+        if (pos < data || pos > data + sz) {
+            throw std::out_of_range("Iterator out of range");
+        }
+        size_t index = pos - data;
+        if (sz >= cap) {
+            reallocate(cap == 0 ? 1 : cap * 2);
+        }
+        for (size_t i = sz; i > index; --i) {
+            data[i] = data[i - 1];
+        }
+        data[index] = value;
+        ++sz;
+        return data + index;
+    }
+
+    iterator insert( const_iterator pos, T&& value ){
+        if (pos < data || pos > data + sz) {
+            throw std::out_of_range("Iterator out of range");
+        }
+        size_t index = pos - data;
+        if (sz >= cap) {
+            reallocate(cap == 0 ? 1 : cap * 2);
+        }
+        for (size_t i = sz; i > index; --i) {
+            data[i] = std::move(data[i - 1]);
+        }
+        data[index] = std::move(value);
+        ++sz;
+        return data + index;
+    }
+
+    iterator insert( const_iterator pos, size_type count, const T& value ){
+        if (pos < data || pos > data + sz) {
+            throw std::out_of_range("Iterator out of range");
+        }
+        size_t index = pos - data;
+        if (sz + count > cap) {
+            reallocate(cap == 0 ? count : cap + count);
+        }
+        for (size_t i = sz + count - 1; i >= index + count; --i) {
+            data[i] = data[i - count];
+        }
+        for (size_t i = index; i < index + count; ++i) {
+            data[i] = value;
+        }
+        sz += count;
+        return data + index;
+    }
+
+    template< class InputIt >
+    iterator insert( const_iterator pos, InputIt first, InputIt last ){
+        if (pos < data || pos > data + sz) {
+            throw std::out_of_range("Iterator out of range");
+        }
+        size_t index = pos - data;
+        size_t count = last - first;
+        if (sz + count > cap) {
+            reallocate(cap == 0 ? count : cap + count);
+        }
+        for (size_t i = sz + count - 1; i >= index + count; --i) {
+            data[i] = data[i - count];
+        }
+        for (size_t i = index; i < index + count; ++i) {
+            data[i] = *first++;
+        }
+        sz += count;
+        return data + index;
+    }
+
+    
 
 
     void push_back(const T& value) {

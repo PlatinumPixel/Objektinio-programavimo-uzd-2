@@ -2,12 +2,8 @@
 #include <iostream>
 #include <vector>
 
-int main() {
+void insertTest(){
     ManoVektorius<int> v;
-
-
-
-
     /////////////////////////////////////////////////Insert tests/////////////////////////////////////////////////////
     // Test 1: Insert a single element
     std::cout << "Test 1: Insert a single element\n";
@@ -45,7 +41,10 @@ int main() {
         std::cout << v[i] << " ";
     }
     std::cout << "\nExpected: 1 10 10 10 2 3 4 5 6 7 8\n";
-    ////////////////////////////////////////Emplace tests/////////////////////////////////////////////////////
+}
+
+void EmplaceTest(){
+        ////////////////////////////////////////Emplace tests/////////////////////////////////////////////////////
     // Test 1: Emplace a single integer
     std::cout << "Test 1: Emplace a single integer\n";
     ManoVektorius<int> v1;
@@ -78,5 +77,92 @@ int main() {
         std::cout << "(" << v3[i].first << ", " << v3[i].second << ") ";
     }
     std::cout << "\nExpected: (1, One) (2, Two)\n";
+}
+
+void ResizeTest(){
+    ////////////////////////////////////////resize tests/////////////////////////////////////////////////////
+        // Test 1: Resize to a larger size
+    std::cout << "Test 1: Resize to a larger size\n";
+    ManoVektorius<int> v1;
+    v1.push_back(1);
+    v1.push_back(2);
+    v1.push_back(3);
+    std::cout << "Before resize: ";
+    for (size_t i = 0; i < v1.size(); ++i) {
+        std::cout << v1[i] << " ";
+    }
+    std::cout << "\nSize: " << v1.size() << ", Capacity: " << v1.capacity() << "\n";
+
+    v1.resize(6); // Resize to a larger size
+    std::cout << "After resize: ";
+    for (size_t i = 0; i < v1.size(); ++i) {
+        std::cout << v1[i] << " ";
+    }
+    std::cout << "\nSize: " << v1.size() << ", Capacity: " << v1.capacity() << "\n\n";
+
+    // Test 2: Resize to a smaller size
+    std::cout << "Test 2: Resize to a smaller size\n";
+    v1.resize(2); // Resize to a smaller size
+    std::cout << "After resize: ";
+    for (size_t i = 0; i < v1.size(); ++i) {
+        std::cout << v1[i] << " ";
+    }
+    std::cout << "\nSize: " << v1.size() << ", Capacity: " << v1.capacity() << "\n\n";
+
+    // Test 3: Resize an empty vector
+    std::cout << "Test 3: Resize an empty vector\n";
+    ManoVektorius<std::string> v2;
+    v2.resize(3); // Resize to a larger size
+    std::cout << "After resize: ";
+    for (size_t i = 0; i < v2.size(); ++i) {
+        std::cout << "\"" << v2[i] << "\" ";
+    }
+    std::cout << "\nSize: " << v2.size() << ", Capacity: " << v2.capacity() << "\n";
+    
+}
+
+void atTest(){
+        try {
+        // Test 1: Access valid elements
+        std::cout << "Test 1: Access valid elements\n";
+        ManoVektorius<int> v;
+        v.push_back(10);
+        v.push_back(20);
+        v.push_back(30);
+
+        std::cout << "Element at index 0: " << v.at(0) << "\n"; // Should print 10
+        std::cout << "Element at index 1: " << v.at(1) << "\n"; // Should print 20
+        std::cout << "Element at index 2: " << v.at(2) << "\n"; // Should print 30
+        std::cout << "\n";
+
+        // Test 2: Modify elements using non-const `at`
+        std::cout << "Test 2: Modify elements using non-const `at`\n";
+        v.at(1) = 50; // Modify the element at index 1
+        for (size_t i = 0; i < v.size(); ++i) {
+            std::cout << v.at(i) << " ";
+        }
+        std::cout << "\nExpected: 10 50 30\n\n";
+
+        // Test 3: Access elements using const `at`
+        std::cout << "Test 3: Access elements using const `at`\n";
+        const ManoVektorius<int> const_v = v;
+        std::cout << "Element at index 0: " << const_v.at(0) << "\n"; // Should print 10
+        std::cout << "Element at index 1: " << const_v.at(1) << "\n"; // Should print 50
+        std::cout << "Element at index 2: " << const_v.at(2) << "\n"; // Should print 30
+        std::cout << "\n";
+
+        // Test 4: Access out-of-range element
+        std::cout << "Test 4: Access out-of-range element\n";
+        std::cout << "Element at index 3: " << v.at(3) << "\n"; // Should throw an exception
+    } catch (const std::out_of_range& e) {
+        std::cerr << "Caught exception: " << e.what() << "\n";
+    }
+}
+
+int main() {
+    insertTest();
+    EmplaceTest();
+    ResizeTest();
+    atTest();
     return 0;
 }

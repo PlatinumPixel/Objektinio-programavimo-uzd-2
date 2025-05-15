@@ -28,6 +28,8 @@ public:
     using iterator       = T*;               // Iterator is a pointer to T
     using const_iterator = const T*;
     using size_type      = std::size_t;
+    using reference = T&;               // Reference to T
+    using const_reference = const T&;   // Const reference to T
 
     // Constructor
     ManoVektorius() : data(nullptr), sz(0), cap(0) {}
@@ -115,6 +117,7 @@ public:
         }
         sz = count;
     }
+
 
     void shrink_to_fit() {
         if (sz < cap) {
@@ -270,12 +273,31 @@ public:
             reallocate(new_cap);
     }
 
-    void resize(size_t new_size, const T& default_value = T()) {
-        reserve(new_size);
-        for (size_t i = sz; i < new_size; ++i)
-            data[i] = default_value;
-        sz = new_size;
+    void resize( size_t count ){
+        if (count > cap) {
+            reallocate(count);
+        }
+        for (size_t i = sz; i < count; ++i) {
+            new (&data[i]) T();
+        }
+        sz = count;
+
     }
+
+    reference at( size_type pos ){
+        if (pos >= sz) {
+            throw std::out_of_range("Index out of range");
+        }
+        return data[pos];
+    }
+
+    const_reference at( size_type pos ) const {
+        if (pos >= sz) {
+            throw std::out_of_range("Index out of range");
+        }
+        return data[pos];
+    }
+
 
     T& operator[](size_t index) {
         return data[index];

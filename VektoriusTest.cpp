@@ -1,7 +1,58 @@
 
 #include "Vektorius.h"
 #include <iostream>
-#include <vector>
+
+#include <stdexcept>
+
+void frontBackTest(){
+        try {
+        // Test 1: Access front and back on a non-empty vector
+        std::cout << "Test 1: Access front and back on a non-empty vector\n";
+        ManoVektorius<int> v;
+        v.push_back(10);
+        v.push_back(20);
+        v.push_back(30);
+
+        std::cout << "Front element: " << v.front() << "\n"; // Should print 10
+        std::cout << "Back element: " << v.back() << "\n";   // Should print 30
+        std::cout << "\n";
+
+        // Test 2: Modify front and back
+        std::cout << "Test 2: Modify front and back\n";
+        v.front() = 5;  // Modify the first element
+        v.back() = 35;  // Modify the last element
+        for (size_t i = 0; i < v.size(); ++i) {
+            std::cout << v[i] << " ";
+        }
+        std::cout << "\nExpected: 5 20 35\n\n";
+
+        // Test 3: Access front and back on an empty vector
+        std::cout << "Test 3: Access front and back on an empty vector\n";
+        ManoVektorius<int> empty_v;
+        std::cout << "Front element: " << empty_v.front() << "\n"; // Should throw an exception
+        std::cout << "Back element: " << empty_v.back() << "\n";   // Should throw an exception
+    } catch (const std::out_of_range& e) {
+        std::cerr << "Caught exception: " << e.what() << "\n";
+    }
+}
+
+void dataTest(){
+        // Test 1: Access raw data pointer
+    std::cout << "\nTest 4: Access raw data pointer\n";
+    ManoVektorius<int> v2;
+    v2.push_back(100);
+    v2.push_back(200);
+    v2.push_back(300);
+
+    int* raw_data = v2.storage();
+    std::cout << "Raw data pointer: " << raw_data << "\n";
+    std::cout << "Elements via raw pointer: ";
+    for (size_t i = 0; i < v2.size(); ++i) {
+        std::cout << raw_data[i] << " ";
+    }
+    std::cout << "\nExpected: 100 200 300\n";
+}
+
 
 void insertTest(){
     ManoVektorius<int> v;
@@ -77,7 +128,7 @@ void EmplaceTest(){
     for (size_t i = 0; i < v3.size(); ++i) {
         std::cout << "(" << v3[i].first << ", " << v3[i].second << ") ";
     }
-    std::cout << "\nExpected: (1, One) (2, Two)\n";
+    std::cout << "\nExpected: (1, One) (2, Two)\n";\
 }
 
 void ResizeTest(){
@@ -160,11 +211,53 @@ void atTest(){
     }
 }
 
+void beginEndTest(){  
+    // Test 1: Forward iteration using `begin` and `end`
+    std::cout << "Test 1: Forward iteration using `begin` and `end`\n";
+    ManoVektorius<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+
+    std::cout << "Elements: ";
+    for (auto it = v.begin(); it != v.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << "\nExpected: 10 20 30\n\n";
+
+    // Test 2: Reverse iteration using `rbegin` and `rend`
+    std::cout << "Test 2: Reverse iteration using `rbegin` and `rend`\n";
+    std::cout << "Elements: ";
+    for (auto it = v.rbegin(); it != v.rend(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << "\nExpected: 30 20 10\n\n";
+
+    // Test 3: Constant forward iteration using `cbegin` and `cend`
+    std::cout << "Test 3: Constant forward iteration using `cbegin` and `cend`\n";
+    const ManoVektorius<int> const_v = v;
+    std::cout << "Elements: ";
+    for (auto it = const_v.cbegin(); it != const_v.cend(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << "\nExpected: 10 20 30\n\n";
+
+    // Test 4: Constant reverse iteration using `crbegin` and `crend`
+    std::cout << "Test 4: Constant reverse iteration using `crbegin` and `crend`\n";
+    std::cout << "Elements: ";
+    for (auto it = const_v.crbegin(); it != const_v.crend(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << "\nExpected: 30 20 10\n\n";}
+
 int main() {
     insertTest();
     EmplaceTest();
     ResizeTest();
     atTest();
+    dataTest();
+    frontBackTest();
+    beginEndTest();
     return 0;
 }
 

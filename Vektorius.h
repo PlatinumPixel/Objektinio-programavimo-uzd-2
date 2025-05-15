@@ -4,6 +4,7 @@
 #define VEKTORIUS_H
 
 #include <iostream>
+#include <iterator>
 
 template <typename T>
 class ManoVektorius {
@@ -25,11 +26,13 @@ private:
 
 public:
 
-    using iterator       = T*;               // Iterator is a pointer to T
-    using const_iterator = const T*;
-    using size_type      = std::size_t;
-    using reference = T&;               // Reference to T
+    using iterator        = T*;               // Iterator is a pointer to T
+    using const_iterator  = const T*;
+    using size_type       = std::size_t;
+    using reference       = T&;               // Reference to T
     using const_reference = const T&;   // Const reference to T
+    using reverse_iterator = std::reverse_iterator<iterator>;
+    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
     // Constructor
     ManoVektorius() : data(nullptr), sz(0), cap(0) {}
@@ -307,8 +310,54 @@ public:
         return data[index];
     }
 
-    T* begin() { return data; }
-    T* end() { return data + sz; }
+    iterator begin() { return data; }
+    const_iterator begin() const { return data; }
+    const_iterator cbegin() const { return data; }
+
+    reverse_iterator rbegin(){ return reverse_iterator(end()); }
+    const_reverse_iterator rbegin() const { return const_reverse_iterator(end()); }
+    const_reverse_iterator crbegin() const noexcept { return const_reverse_iterator(end()); }
+
+    iterator end() { return data + sz; }
+    const_iterator end() const { return data + sz; }
+    const_iterator cend() const { return data + sz; }
+
+    reverse_iterator rend() { return reverse_iterator(begin()); }
+    const_reverse_iterator rend() const { return const_reverse_iterator(begin()); }
+    const_reverse_iterator crend() const noexcept { return const_reverse_iterator(begin()); }
+
+    reference front() {
+        if (sz == 0) {
+            throw std::out_of_range("Vector is empty");
+        }
+        return data[0];
+    }
+    const_reference front() const {
+        if (sz == 0) {
+            throw std::out_of_range("Vector is empty");
+        }
+        return data[0];
+    }
+
+    reference back() {
+        if (sz == 0) {
+            throw std::out_of_range("Vector is empty");
+        }
+        return data[sz - 1];
+    }
+    const_reference back() const {
+        if (sz == 0) {
+            throw std::out_of_range("Vector is empty");
+        }
+        return data[sz - 1];
+    }
+
+    T* storage() {
+        return data;
+    }
+    const T* storage() const {
+        return data;
+    }
 };
 
 #endif // VEKTORIUS_H

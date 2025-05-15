@@ -1,3 +1,4 @@
+
 #include "Vektorius.h"
 #include <iostream>
 #include <vector>
@@ -166,3 +167,4 @@ int main() {
     atTest();
     return 0;
 }
+

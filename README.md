@@ -21,7 +21,7 @@ readFromFile metodas (Įvesties metodas iš failo):
 Šis metodas skaito informaciją iš failo. Failo struktūra turi būti tokia, kad kiekvienas studento įrašas būtų eilutėje su vardu, pavarde ir pažymiais.
 (pirma eilutė neskaitoma nes skirta duomenų pavadinimams dėl aiškumo)
 
-pvz:
+pvz:<br>
 Vardas         Pavarde        ND1    ND2    ND3    ND4    ND5    ND6    ND7    ND8    ND9    ND10   ND11   ND12   ND13   ND14   ND15   Egz.
 Vardas1        Pavarde1       9      9      8      1      9      1      9      4      1      3      2      5      3      10     7      4      
 Vardas2        Pavarde2       1      8      5      10     8      1      3      7      4      9      8      4      7      8      2      4 

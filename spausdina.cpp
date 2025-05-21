@@ -15,5 +15,5 @@ void spausdinaFaila(vector <stud> &A, string failas){
     rf << "--------------------------------------------------------------------" << endl;
 for (int i=0;i<A.size();i++){
     rf << A[i];
-
+}
 }

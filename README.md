@@ -8,38 +8,26 @@ CPU: AMD Ryzen 7 8845, 8 Cores, 3,8 GHZ<br>
 RAM: 16 GB, 5600 MT/s<br>
 SSD NVMe <br>
 
-| Palyginimas su struct |             |              |            |          |
-|-----------------------|-------------|--------------|------------|----------|
-|                       |             |              |            |          |
-| 1000000               | Nuskaitymas | Išrušiavimas | Rikiavimas | Iš viso  |
-| Struct                | 2.83606     | 0.32922      | 1.80675    | 4.97203  |
-| Class                 | 3.0605      | 0.4786       | 2.9328     | 6.4719   |
-|                       |             |              |            |          |
-| 10000000              |             |              |            |          |
-| Struct                | 28.1194     | 4.53599      | 21.0747    | 53.73009 |
-| Class                 | 32.5148     | 4.6985       | 36.9629    | 74.1762  |
-<br>
+------------------1.2--------------------<br>
 
+Studentas klasę galima rasti "Struktura.h" faile
 
-| O1       |             |              |            |              |         |              |
-|----------|-------------|--------------|------------|--------------|---------|--------------|
-|          | Nuskaitymas | Išrušiavimas | Rikiavimas | Spausdinimas | Iš viso | Failoo Dydis |
-| 1000000  | 3.0605      | 0.4786       | 2.9328     | 4.4443       | 10.916  | 256          |
-| 10000000 | 32.5148     | 4.6985       | 36.9629    | 45.7464      | 119.923 |              |
-<br>
+Įvestis/Išvestis iš Studentas klasės: readFromConsole metodas (Įvesties metodas iš konsolės):
 
-| O2       | Nuskaitymas | Išrušiavimas | Rikiavimas | Spausdinimas | Iš viso | Failo Dydis |
-|----------|-------------|--------------|------------|--------------|---------|-------------|
-| 1000000  | 1.4488      | 0.19         | 0.5033     | 4.2815       | 6.4235  | 252         |
-| 10000000 | 16.5359     | 1.7361       | 6.7056     | 49.511       | 74.4885 |             |
+Pirmiausia prašomas studento vardą ir pavardę. Po to, vartotojas prašomas įvesti studento pažymius, kol nebus įvestas N (tai bus ženklas, kad įvedimas baigiasi). Galiausiai, prašoma įvesti egzamino pažymį, kuris bus paskutinis įvestas duomenų taškas.
 
-<br>
-| O3       | Nuskaitymas | Išrušiavimas | Rikiavimas | Spausdinimas | Iš viso | Failo Dydis |
-|----------|-------------|--------------|------------|--------------|---------|-------------|
-| 1000000  | 1.4647      | 0.1809       | 0.5059     | 4.344        | 6.4953  | 272         |
-| 10000000 | 15.5423     | 1.7754       | 7.0386     | 44.9865      | 69.3427 |             |
-<br>
+readFromFile metodas (Įvesties metodas iš failo):
 
+Šis metodas skaito informaciją iš failo. Failo struktūra turi būti tokia, kad kiekvienas studento įrašas būtų eilutėje su vardu, pavarde ir pažymiais.
+(pirma eilutė neskaitoma nes skirta duomenų pavadinimams dėl aiškumo)
 
-![alt text](images/image.png)
-<br>
+pvz:
+Vardas         Pavarde        ND1    ND2    ND3    ND4    ND5    ND6    ND7    ND8    ND9    ND10   ND11   ND12   ND13   ND14   ND15   Egz.
+Vardas1        Pavarde1       9      9      8      1      9      1      9      4      1      3      2      5      3      10     7      4      
+Vardas2        Pavarde2       1      8      5      10     8      1      3      7      4      9      8      4      7      8      2      4 
+
+Veikimas:
+
+Pirmiausia, metodas nuskaitys studento vardą ir pavardę. Tada jis nuskaitys visus pažymius ir įrašys juos į pazymiai vektorių. Paskutinis nuskaitytas pažymys bus laikomas egzamino pažymiu, ir jis bus išimtas iš pažymių sąrašo (naudojant pop_back).
+
+Išvedimo operatorius <<: Šis operatorius (operator<<) naudojamas objektų Studentas duomenų išvedimui tiek į konsolę, tiek į failą. Šis operatorius priima std::ostream tipo srautą (tai gali būti tiek std::cout (konsolė), tiek std::ofstream (failas)) ir formatuoja išvedimą pagal nurodytus reikalavimus.

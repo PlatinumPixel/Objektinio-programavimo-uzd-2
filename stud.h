@@ -133,10 +133,12 @@ public:
       return *this;
     }
     friend std::ostream& operator<<(std::ostream& out, const stud &a) {
-      cout << std::left << setw(20) << a.getVardas() << setw(15) << a.getPavarde()
+      out << std::left << setw(20) << a.getVardas() << setw(15) << a.getPavarde()
       << setw(18) << std::fixed << std::setprecision(2) << a.getGalutinisVid() << " " << a.getGalutinisMed() << endl;
       return out;
     }
+
+    
     friend std::istream& operator>>(std::istream& in, stud &a) {
       in >> a.vard >> a.pava;
       cout << "Veskite studento namu darbo pazymius arba N, kad sustoti ";

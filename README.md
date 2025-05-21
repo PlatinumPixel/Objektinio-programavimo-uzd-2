@@ -34,7 +34,7 @@ Išvedimo operatorius <<: Šis operatorius (operator<<) naudojamas objektų Stud
 
 Išvedimas formatuojamas taip:
 Vardas              Pavarde        Galutinis(vid.) / Galutinis(med.)
---------------------------------------------------------------------
+ --------------------------------------------------------------------
 Antanas             Janauskas      5.00               5.00
 Antanas             Stankevicius   2.00               2.00
 

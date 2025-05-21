@@ -8,7 +8,6 @@ CPU: AMD Ryzen 7 8845, 8 Cores, 3,8 GHZ<br>
 RAM: 16 GB, 5600 MT/s<br>
 SSD NVMe <br>
 
-<br>
 ![alt text](images/image-2.png)
 <br>
 ![alt text](images/image-1.png)

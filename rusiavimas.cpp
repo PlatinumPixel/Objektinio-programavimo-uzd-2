@@ -60,7 +60,6 @@ void rusiavimas(){
     visaTrukme+=t.elapsed();
     cout << "Duomenis nuskaityti uztruko " << visaTrukme << endl;
     t.reset();
-    ///plz fix kazkodel cia zymiai leciau veikia negu turetu(galimai destructor ir move reik?)
     if (vid==1){   
         auto it = std::partition(visi.begin(), visi.end(), [](const stud &s)
         {

@@ -99,6 +99,7 @@ void test() {
     testMoveAssignment();
     testOutput();
     testInput();
+    //Zmogus test;
     
     std::cout << "\nAll tests passed!\n";
 }

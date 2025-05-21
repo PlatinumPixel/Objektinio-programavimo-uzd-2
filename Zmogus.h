@@ -6,19 +6,19 @@
 
 class Zmogus {
 public:
-    // Default constructor
+    // Default construktorius
     Zmogus() = default;
 
     Zmogus(const string& vard, const string& pava) : vard(vard), pava(pava) {}
 
-    // Virtual destructor
+    // Virtual destruktorius
     virtual ~Zmogus() = default;
 
-    // Copy constructor
+    // Copy construktorius
     Zmogus(const Zmogus& other)
         : vard(other.vard), pava(other.pava) {}
 
-    // Copy assignment operator
+    // Copy assignment operatoratorius
     Zmogus& operator=(const Zmogus& other) {
         if (this != &other) {
             vard = other.vard;
@@ -27,11 +27,11 @@ public:
         return *this;
     }
 
-    // Move constructor
+    // Move construktorius
     Zmogus(Zmogus&& other) noexcept
         : vard(std::move(other.vard)), pava(std::move(other.pava)) {}
 
-    // Move assignment operator
+    // Move assignment operatorius
     Zmogus& operator=(Zmogus&& other) noexcept {
         if (this != &other) {
             vard = std::move(other.vard);
@@ -45,6 +45,9 @@ public:
 
     inline string getVardas() const { return vard; }
     inline string getPavarde() const { return pava; }
+
+    // Kad clase butu abstrakti, reikia padaryti virtual function
+    virtual void addTarpPazymys(int paz) = 0;
 protected:
    
     string vard;  

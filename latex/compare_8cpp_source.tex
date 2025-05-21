@@ -1,0 +1,105 @@
+\doxysection{compare.\+cpp}
+\hypertarget{compare_8cpp_source}{}\label{compare_8cpp_source}\mbox{\hyperlink{compare_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bibl_8h}{bibl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00003}\mbox{\hyperlink{bibl_8h_ae6467547ad7a0a19c21a400e12315eb2}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{compare_8cpp_ab315d9000391731af75c96d975919bf5}{compare}}(vector\ <stud>\ \&\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}})\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00005}00005\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1\ -\/\ Pagal\ Varda\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2\ -\/\ Pagal\ Pavarde\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3\ -\/\ Pagal\ pazymiu\ vidurki\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4\ -\/\ Pagal\ pazymiu\ mediana\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ input;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(cin>>input)||input<1\ ||\ input>4)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(input)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a46e36f47b12f2b4bd01d035ac68a1854}{compVardas}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a82034a4e68ddbfef5a29ce5802161653}{compPavard}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a7cec52bcee5ffd123e2569bced7fcce1}{compVid}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a00335bfe9579c1e03d091aec88047b7d}{compMed}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *x)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ x\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pagal\ ka\ isrusiuoti\ duomenis?"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00043}\mbox{\hyperlink{bibl_8h_aa2b34d3cd58efe26d01192249ac89c04}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{compare_8cpp_ab315d9000391731af75c96d975919bf5}{compare}}(vector\ <stud>\ \&\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}},\textcolor{keywordtype}{double}\ \&time)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_timer}{Timer}}\ laik;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1\ -\/\ Pagal\ Varda\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2\ -\/\ Pagal\ Pavarde\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3\ -\/\ Pagal\ pazymiu\ vidurki\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4\ -\/\ Pagal\ pazymiu\ mediana\ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ input;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(cin>>input)||input<1\ ||\ input>4)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ laik.\mbox{\hyperlink{class_timer_a9020542d73357a4eef512eefaf57524b}{reset}}();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(input)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a46e36f47b12f2b4bd01d035ac68a1854}{compVardas}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a82034a4e68ddbfef5a29ce5802161653}{compPavard}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a7cec52bcee5ffd123e2569bced7fcce1}{compVid}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.begin(),\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.end(),\ \mbox{\hyperlink{bibl_8h_a00335bfe9579c1e03d091aec88047b7d}{compMed}});}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ time+=laik.\mbox{\hyperlink{class_timer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{elapsed}}();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *x)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ x\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pagal\ ka\ isrusiuoti\ duomenis?"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00086}\mbox{\hyperlink{bibl_8h_a46e36f47b12f2b4bd01d035ac68a1854}{00086}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{compare_8cpp_a1d3fd149da64d191034c84a5de880a18}{compVardas}}(\mbox{\hyperlink{classstud}{stud}}\ \&a,\ \mbox{\hyperlink{classstud}{stud}}\ \&b)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}()<b.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00088}00088\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00089}00089\ \ \ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00090}\mbox{\hyperlink{bibl_8h_a82034a4e68ddbfef5a29ce5802161653}{00090}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{compare_8cpp_a18bd1e66f7d9e408c9a2d6efadbc9cf1}{compPavard}}(\mbox{\hyperlink{classstud}{stud}}\ \&a,\ \mbox{\hyperlink{classstud}{stud}}\ \&b)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()<b.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00092}00092\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00093}00093\ \ \ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00094}\mbox{\hyperlink{bibl_8h_a7cec52bcee5ffd123e2569bced7fcce1}{00094}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{compare_8cpp_a7b294f1957cdb3f2f4c76885830fa7b3}{compVid}}(\mbox{\hyperlink{classstud}{stud}}\ \&a,\ \mbox{\hyperlink{classstud}{stud}}\ \&b)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}()<b.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00096}00096\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00097}00097\ \ \ }
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00098}\mbox{\hyperlink{bibl_8h_a00335bfe9579c1e03d091aec88047b7d}{00098}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{compare_8cpp_a17c67cbc2b2114c3acaf773fb459e9af}{compMed}}(\mbox{\hyperlink{classstud}{stud}}\ \&a,\ \mbox{\hyperlink{classstud}{stud}}\ \&b)\{}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}()<b.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}();}
+\DoxyCodeLine{\Hypertarget{compare_8cpp_source_l00100}00100\ \ \ \}}
+
+\end{DoxyCode}

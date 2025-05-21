@@ -1,0 +1,74 @@
+\doxysection{unit\+\_\+test.\+cpp}
+\hypertarget{unit__test_8cpp_source}{}\label{unit__test_8cpp_source}\mbox{\hyperlink{unit__test_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stud_8h}{stud.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00004}\mbox{\hyperlink{unit__test_8cpp_a147f939b460345579ab5b6aa32b427c9}{00004}}\ \mbox{\hyperlink{unit__test_8cpp_a147f939b460345579ab5b6aa32b427c9}{TEST}}(StudTest,\ DefaultConstructor)\ \{}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ s;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00006}00006\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00007}00007\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00008}00008\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}(),\ 0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00009}00009\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}(),\ 0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00012}\mbox{\hyperlink{unit__test_8cpp_a817193dd8bedb70d40eb46e284661eed}{00012}}\ \mbox{\hyperlink{unit__test_8cpp_a147f939b460345579ab5b6aa32b427c9}{TEST}}(StudTest,\ Setters)\ \{}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ s;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00014}00014\ \ \ \ \ s.\mbox{\hyperlink{class_zmogus_a94476831ed8a2544f1886a88ac2c15f6}{setvard}}(\textcolor{stringliteral}{"{}Jonas"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00015}00015\ \ \ \ \ s.\mbox{\hyperlink{class_zmogus_a3c573514f99bbbe26e23b71aafd74d13}{setpava}}(\textcolor{stringliteral}{"{}Jonaitis"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00016}00016\ \ \ \ \ s.\mbox{\hyperlink{classstud_a1d0c3e4c3b061c026074303c4771dcdb}{setEgzaminas}}(9.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00017}00017\ \ \ \ \ s.\mbox{\hyperlink{classstud_a7d2b5b6da9a573cb4bce9e02f7dd7138}{setVid}}(8.0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00018}00018\ \ \ \ \ s.\mbox{\hyperlink{classstud_a4aaa405eb43ca63cf0e92c3c8da1283c}{setMed}}(8.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00019}00019\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}(),\ \textcolor{stringliteral}{"{}Jonas"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00020}00020\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}(),\ \textcolor{stringliteral}{"{}Jonaitis"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00021}00021\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{classstud_afaea0c725356a4657c0b8f87ff9f397f}{getEgz}}(),\ 9.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00022}00022\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}(),\ 8.0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00023}00023\ \ \ \ \ EXPECT\_EQ(s.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}(),\ 8.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00026}\mbox{\hyperlink{unit__test_8cpp_aba0435c294428687bbaac83886a0e390}{00026}}\ \mbox{\hyperlink{unit__test_8cpp_a147f939b460345579ab5b6aa32b427c9}{TEST}}(StudTest,\ RuleOfFive)\ \{}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Set\ up\ original\ object}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ original;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00029}00029\ \ \ \ \ original.\mbox{\hyperlink{class_zmogus_a94476831ed8a2544f1886a88ac2c15f6}{setvard}}(\textcolor{stringliteral}{"{}Jonas"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00030}00030\ \ \ \ \ original.\mbox{\hyperlink{class_zmogus_a3c573514f99bbbe26e23b71aafd74d13}{setpava}}(\textcolor{stringliteral}{"{}Jonaitis"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00031}00031\ \ \ \ \ original.\mbox{\hyperlink{classstud_a1d0c3e4c3b061c026074303c4771dcdb}{setEgzaminas}}(9.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00032}00032\ \ \ \ \ original.\mbox{\hyperlink{classstud_a7d2b5b6da9a573cb4bce9e02f7dd7138}{setVid}}(8.0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00033}00033\ \ \ \ \ original.\mbox{\hyperlink{classstud_a4aaa405eb43ca63cf0e92c3c8da1283c}{setMed}}(8.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ copyConstructed(original);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00037}00037\ \ \ \ \ EXPECT\_EQ(copyConstructed.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}(),\ \textcolor{stringliteral}{"{}Jonas"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00038}00038\ \ \ \ \ EXPECT\_EQ(copyConstructed.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}(),\ \textcolor{stringliteral}{"{}Jonaitis"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00039}00039\ \ \ \ \ EXPECT\_EQ(copyConstructed.\mbox{\hyperlink{classstud_afaea0c725356a4657c0b8f87ff9f397f}{getEgz}}(),\ 9.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00040}00040\ \ \ \ \ EXPECT\_EQ(copyConstructed.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}(),\ 8.0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00041}00041\ \ \ \ \ EXPECT\_EQ(copyConstructed.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}(),\ 8.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Copy\ assignment}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ copyAssigned;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00045}00045\ \ \ \ \ copyAssigned\ =\ original;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00046}00046\ \ \ \ \ EXPECT\_EQ(copyAssigned.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}(),\ \textcolor{stringliteral}{"{}Jonas"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00047}00047\ \ \ \ \ EXPECT\_EQ(copyAssigned.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}(),\ \textcolor{stringliteral}{"{}Jonaitis"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00048}00048\ \ \ \ \ EXPECT\_EQ(copyAssigned.\mbox{\hyperlink{classstud_afaea0c725356a4657c0b8f87ff9f397f}{getEgz}}(),\ 9.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00049}00049\ \ \ \ \ EXPECT\_EQ(copyAssigned.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}(),\ 8.0);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00050}00050\ \ \ \ \ EXPECT\_EQ(copyAssigned.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}(),\ 8.5);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Move\ constructor}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ toMove;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00054}00054\ \ \ \ \ toMove.\mbox{\hyperlink{class_zmogus_a94476831ed8a2544f1886a88ac2c15f6}{setvard}}(\textcolor{stringliteral}{"{}Moved"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ moveConstructed(std::move(toMove));}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00056}00056\ \ \ \ \ EXPECT\_EQ(moveConstructed.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}(),\ \textcolor{stringliteral}{"{}Moved"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Move\ assignment}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ toMoveAssign;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00060}00060\ \ \ \ \ toMoveAssign.\mbox{\hyperlink{class_zmogus_a94476831ed8a2544f1886a88ac2c15f6}{setvard}}(\textcolor{stringliteral}{"{}MoveAssign"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ moveAssigned;}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00062}00062\ \ \ \ \ moveAssigned\ =\ std::move(toMoveAssign);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00063}00063\ \ \ \ \ EXPECT\_EQ(moveAssigned.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}(),\ \textcolor{stringliteral}{"{}MoveAssign"{}});}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00066}\mbox{\hyperlink{unit__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00066}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)\ \{}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00067}00067\ \ \ \ \ ::testing::InitGoogleTest(\&argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ RUN\_ALL\_TESTS();}
+\DoxyCodeLine{\Hypertarget{unit__test_8cpp_source_l00069}00069\ \}}
+
+\end{DoxyCode}

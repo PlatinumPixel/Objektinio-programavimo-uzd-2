@@ -1,175 +1,175 @@
 \doxysection{stud.\+h}
-\hypertarget{stud_8h_source}{}\label{stud_8h_source}
+\hypertarget{stud_8h_source}{}\label{stud_8h_source}\mbox{\hyperlink{stud_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUD\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUD\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}std.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <numeric>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Zmogus.h"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }stud\ :\ \textcolor{keyword}{public}\ Zmogus\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010\ \ \ \ \ vector<int>\ tarp;}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ tarpvid\ =\ 0;}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ tarpmed\ =\ 0;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ egz\ =\ 0;}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinisvid\ =\ 0;}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinismed\ =\ 0;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
-\DoxyCodeLine{00019\ \ \ \ \ stud()\ :\ Zmogus()\ \{\}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ stud(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ vardas,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ pavarde)\ :\ Zmogus(vardas,\ pavarde)\ \{\}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ stud(std::istringstream\&\ line)\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ line\ >>\ vard\ >>\ pava;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (line\ >>\ paz)\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ addTarpPazymys(paz);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tarp.empty())\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ egz\ =\ tarp.back();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ tarp.pop\_back();}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
-\DoxyCodeLine{00036\ \ \ \ \ stud(\textcolor{keyword}{const}\ stud\&\ kitas)\ :\ Zmogus(kitas)\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ tarp\ =\ kitas.tarp;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Move\ constructor}}
-\DoxyCodeLine{00044\ \ \ \ \ stud(stud\&\&\ kitas)\ noexcept\ :\ Zmogus(std::move(kitas))\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ tarp\ =\ std::move(kitas.tarp);}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ kitas.egz\ =\ 0;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ kitas.galutinisvid\ =\ 0.0;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ kitas.galutinismed\ =\ 0.0;}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Destructor}}
-\DoxyCodeLine{00056\ \ \ \ \ \string~stud()\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ tarp.clear();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ tarp.shrink\_to\_fit();}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Copy\ assignment\ operator}}
-\DoxyCodeLine{00062\ \ \ \ \ stud\&\ operator=(\textcolor{keyword}{const}\ stud\&\ kitas)\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&kitas)\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::operator=(kitas);\ \textcolor{comment}{//\ Call\ base\ class\ assignment\ operator}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ tarp\ =\ kitas.tarp;}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Move\ assignment\ operator}}
-\DoxyCodeLine{00074\ \ \ \ \ stud\&\ operator=(stud\&\&\ kitas)\ \textcolor{keyword}{noexcept}\ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&kitas)\ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::operator=(std::move(kitas));\ \textcolor{comment}{//\ Call\ base\ class\ move\ assignment\ operator}}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ tarp\ =\ std::move(kitas.tarp);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ kitas.egz\ =\ 0;}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ kitas.galutinisvid\ =\ 0.0;}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ kitas.galutinismed\ =\ 0.0;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00087\ \ \ \ \ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Setter\ methods}}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ addTarpPazymys(\textcolor{keywordtype}{int}\ paz)\ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tarp.capacity()\ ==\ 0)\ tarp.reserve(10);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ tarp.push\_back(paz);}
-\DoxyCodeLine{00093\ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setEgzaminas(\textcolor{keywordtype}{double}\ egzaminas)\ \{\ egz\ =\ egzaminas;\ \}}
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setVid(\textcolor{keywordtype}{double}\ vid)\ \{\ galutinisvid\ =\ vid;\ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setMed(\textcolor{keywordtype}{double}\ med)\ \{\ galutinismed\ =\ med;\ \}}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ Getter\ methods}}
-\DoxyCodeLine{00099\ \ \ \ \ vector<int>\&\ getTarp()\ \{\ \textcolor{keywordflow}{return}\ tarp;\ \}}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{double}\ getEgz()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egz;\ \}}
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{double}\ getGalutinisVid()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinisvid;\ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{double}\ getGalutinisMed()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinismed;\ \}}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Calculate\ final\ grades}}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateGalutinis()\ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tarp.empty())\ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ tarpvid\ =\ accumulate(tarp.begin(),\ tarp.end(),\ 0)\ /\ double(tarp.size());}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(tarp.begin(),\ tarp.end());}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tarp.size()\ \%\ 2\ ==\ 0)\ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tarpmed\ =\ (tarp[tarp.size()\ /\ 2\ -\/\ 1]\ +\ tarp[tarp.size()\ /\ 2])\ /\ 2.0;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tarpmed\ =\ tarp[tarp.size()\ /\ 2];}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ galutinisvid\ =\ (tarpvid\ *\ 0.4)\ +\ (egz\ *\ 0.6);}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ galutinismed\ =\ (tarpmed\ *\ 0.4)\ +\ (egz\ *\ 0.6);}
-\DoxyCodeLine{00117\ \ \ \ \ \}}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ Overloaded\ operators}}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ out,\ \textcolor{keyword}{const}\ stud\&\ a)\ \{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ out\ <<\ std::left\ <<\ setw(20)\ <<\ a.getVardas()\ <<\ setw(15)\ <<\ a.getPavarde()}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(18)\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ a.getGalutinisVid()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ a.getGalutinisMed()\ <<\ endl;}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
-\DoxyCodeLine{00124\ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ operator>>(std::istream\&\ in,\ stud\&\ a)\ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ in\ >>\ a.vard\ >>\ a.pava;}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Veskite\ studento\ namu\ darbo\ pazymius\ arba\ N,\ kad\ sustoti\ "{}};}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ input;}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}N"{}}\ ||\ input\ ==\ \textcolor{stringliteral}{"{}n"{}})\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz\ =\ std::stoi(input);}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (paz\ <\ 0\ ||\ paz\ >\ 10)\ \{}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}};}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.addTarpPazymys(paz);}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&)\ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}}\ <<\ endl;}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ x)\ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ x\ <<\ endl;}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ studento\ egzamino\ rezultata\ "{}};}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ input;}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ egz\ =\ std::stoi(input);}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (egz\ <\ 0\ ||\ egz\ >\ 10)\ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}};}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.setEgzaminas(egz);}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&)\ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}}\ <<\ endl;}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ x)\ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ x\ <<\ endl;}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ in;}
-\DoxyCodeLine{00167\ \ \ \ \ \}}
-\DoxyCodeLine{00168\ \};}
-\DoxyCodeLine{00169\ }
-\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ STUD\_H}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ STUD\_H}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{std_8h}{std.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zmogus_8h}{Zmogus.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00008}\mbox{\hyperlink{classstud}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}}\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00009}00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00010}00010\ \ \ \ \ vector<int>\ tarp;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{double}\ tarpvid\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{double}\ tarpmed\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{double}\ egz\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinisvid\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinismed\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00019}\mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{00019}}\ \ \ \ \ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}()\ :\ \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00021}\mbox{\hyperlink{classstud_a8d9e6bd09e7e60dc1e22990812a83597}{00021}}\ \ \ \ \ \mbox{\hyperlink{classstud_a8d9e6bd09e7e60dc1e22990812a83597}{stud}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ vardas,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ pavarde)\ :\ \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}}(vardas,\ pavarde)\ \{\}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00023}\mbox{\hyperlink{classstud_a82750ea28c5ab97b8c9040901ec8f313}{00023}}\ \ \ \ \ \mbox{\hyperlink{classstud_a82750ea28c5ab97b8c9040901ec8f313}{stud}}(std::istringstream\&\ line)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ line\ >>\ \mbox{\hyperlink{class_zmogus_a51562fdc342722fd278d76050c527a47}{vard}}\ >>\ \mbox{\hyperlink{class_zmogus_aebd2a9e9697f0af5cc70987a1c874d11}{pava}};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (line\ >>\ paz)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstud_a384052d029a01b27eeb5366ef75f9df9}{addTarpPazymys}}(paz);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tarp.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ egz\ =\ tarp.back();}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ tarp.pop\_back();}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00036}\mbox{\hyperlink{classstud_a692c5555a1ba4428fac39a42a83da822}{00036}}\ \ \ \ \ \mbox{\hyperlink{classstud_a692c5555a1ba4428fac39a42a83da822}{stud}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\ kitas)\ :\ \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}}(kitas)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ tarp\ =\ kitas.tarp;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Move\ constructor}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00044}\mbox{\hyperlink{classstud_ad82b4deafcf5ba15b423b0a04769de98}{00044}}\ \ \ \ \ \mbox{\hyperlink{classstud_ad82b4deafcf5ba15b423b0a04769de98}{stud}}(\mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\&\ kitas)\ noexcept\ :\ \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}}(std::move(kitas))\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ tarp\ =\ std::move(kitas.tarp);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ kitas.egz\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ kitas.galutinisvid\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ kitas.galutinismed\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00056}\mbox{\hyperlink{classstud_a424e9a05f0cd285a39bd14af082335f9}{00056}}\ \ \ \ \ \mbox{\hyperlink{classstud_a424e9a05f0cd285a39bd14af082335f9}{\string~stud}}()\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ tarp.clear();}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ tarp.shrink\_to\_fit();}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Copy\ assignment\ operator}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00062}\mbox{\hyperlink{classstud_a4593a17d47d34de919daef4e177ab784}{00062}}\ \ \ \ \ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\ \mbox{\hyperlink{classstud_a4593a17d47d34de919daef4e177ab784}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\ kitas)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&kitas)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{Zmogus::operator=}}(kitas);\ \textcolor{comment}{//\ Call\ base\ class\ assignment\ operator}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ tarp\ =\ kitas.tarp;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Move\ assignment\ operator}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00074}\mbox{\hyperlink{classstud_a11ac6ad241fe70ad49d1ba5d0399d5cc}{00074}}\ \ \ \ \ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\ \mbox{\hyperlink{classstud_a11ac6ad241fe70ad49d1ba5d0399d5cc}{operator=}}(\mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\&\ kitas)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&kitas)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{Zmogus::operator=}}(std::move(kitas));\ \textcolor{comment}{//\ Call\ base\ class\ move\ assignment\ operator}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ tarp\ =\ std::move(kitas.tarp);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ egz\ =\ kitas.egz;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisvid\ =\ kitas.galutinisvid;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ galutinismed\ =\ kitas.galutinismed;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ kitas.egz\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ kitas.galutinisvid\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ kitas.galutinismed\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ Setter\ methods}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00090}\mbox{\hyperlink{classstud_a384052d029a01b27eeb5366ef75f9df9}{00090}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classstud_a384052d029a01b27eeb5366ef75f9df9}{addTarpPazymys}}(\textcolor{keywordtype}{int}\ paz)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tarp.capacity()\ ==\ 0)\ tarp.reserve(10);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ tarp.push\_back(paz);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00094}\mbox{\hyperlink{classstud_a1d0c3e4c3b061c026074303c4771dcdb}{00094}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classstud_a1d0c3e4c3b061c026074303c4771dcdb}{setEgzaminas}}(\textcolor{keywordtype}{double}\ egzaminas)\ \{\ egz\ =\ egzaminas;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00095}\mbox{\hyperlink{classstud_a7d2b5b6da9a573cb4bce9e02f7dd7138}{00095}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classstud_a7d2b5b6da9a573cb4bce9e02f7dd7138}{setVid}}(\textcolor{keywordtype}{double}\ vid)\ \{\ galutinisvid\ =\ vid;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00096}\mbox{\hyperlink{classstud_a4aaa405eb43ca63cf0e92c3c8da1283c}{00096}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classstud_a4aaa405eb43ca63cf0e92c3c8da1283c}{setMed}}(\textcolor{keywordtype}{double}\ med)\ \{\ galutinismed\ =\ med;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ Getter\ methods}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00099}\mbox{\hyperlink{classstud_ae2f338274ddc75b06ff9c71000ad9b32}{00099}}\ \ \ \ \ vector<int>\&\ \mbox{\hyperlink{classstud_ae2f338274ddc75b06ff9c71000ad9b32}{getTarp}}()\ \{\ \textcolor{keywordflow}{return}\ tarp;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00100}\mbox{\hyperlink{classstud_afaea0c725356a4657c0b8f87ff9f397f}{00100}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstud_afaea0c725356a4657c0b8f87ff9f397f}{getEgz}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egz;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00101}\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{00101}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinisvid;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00102}\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{00102}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinismed;\ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ Calculate\ final\ grades}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00105}\mbox{\hyperlink{classstud_a6f83e2622616fd03e4a81eae86ce9e33}{00105}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classstud_a6f83e2622616fd03e4a81eae86ce9e33}{calculateGalutinis}}()\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tarp.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ tarpvid\ =\ accumulate(tarp.begin(),\ tarp.end(),\ 0)\ /\ double(tarp.size());}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(tarp.begin(),\ tarp.end());}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tarp.size()\ \%\ 2\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tarpmed\ =\ (tarp[tarp.size()\ /\ 2\ -\/\ 1]\ +\ tarp[tarp.size()\ /\ 2])\ /\ 2.0;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tarpmed\ =\ tarp[tarp.size()\ /\ 2];}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ galutinisvid\ =\ (tarpvid\ *\ 0.4)\ +\ (egz\ *\ 0.6);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ galutinismed\ =\ (tarpmed\ *\ 0.4)\ +\ (egz\ *\ 0.6);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ Overloaded\ operators}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00120}\mbox{\hyperlink{classstud_afd4dfc54e302b3d2287ae20d2d3bc060}{00120}}\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classstud_afd4dfc54e302b3d2287ae20d2d3bc060}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\ a)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ out\ <<\ std::left\ <<\ setw(20)\ <<\ a.\mbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}()\ <<\ setw(15)\ <<\ a.\mbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(18)\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ a.\mbox{\hyperlink{classstud_aeeb312c05712556e336edece2bb31885}{getGalutinisVid}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ a.\mbox{\hyperlink{classstud_a27dd7ed2883684e01408540581fa6caa}{getGalutinisMed}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00126}\mbox{\hyperlink{classstud_a111a21ba3d632218fc96a9d2a1cd184e}{00126}}\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ \mbox{\hyperlink{classstud_a111a21ba3d632218fc96a9d2a1cd184e}{operator>>}}(std::istream\&\ in,\ \mbox{\hyperlink{classstud_ab6ed07f01c0452711eccaaa57a75d669}{stud}}\&\ a)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ in\ >>\ a.\mbox{\hyperlink{class_zmogus_a51562fdc342722fd278d76050c527a47}{vard}}\ >>\ a.\mbox{\hyperlink{class_zmogus_aebd2a9e9697f0af5cc70987a1c874d11}{pava}};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Veskite\ studento\ namu\ darbo\ pazymius\ arba\ N,\ kad\ sustoti\ "{}};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ input;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}N"{}}\ ||\ input\ ==\ \textcolor{stringliteral}{"{}n"{}})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz\ =\ std::stoi(input);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (paz\ <\ 0\ ||\ paz\ >\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{classstud_a384052d029a01b27eeb5366ef75f9df9}{addTarpPazymys}}(paz);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ x)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ x\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ studento\ egzamino\ rezultata\ "{}};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ input;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ egz\ =\ std::stoi(input);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (egz\ <\ 0\ ||\ egz\ >\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{classstud_a1d0c3e4c3b061c026074303c4771dcdb}{setEgzaminas}}(egz);}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivestas\ neteisingas\ simbolis"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ x)\ \{}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ x\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ in;}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00168}00168\ \};}
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{stud_8h_source_l00170}00170\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

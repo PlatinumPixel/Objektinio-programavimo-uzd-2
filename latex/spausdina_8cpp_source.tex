@@ -1,0 +1,26 @@
+\doxysection{spausdina.\+cpp}
+\hypertarget{spausdina_8cpp_source}{}\label{spausdina_8cpp_source}\mbox{\hyperlink{spausdina_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bibl_8h}{bibl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00003}\mbox{\hyperlink{bibl_8h_ac909aeedbb1be07e235352b9177228ba}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spausdina_8cpp_a778781bb1403d010fcd00c5ba3eb19f5}{spausdina}}(vector\ <stud>\ \mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}})\{}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00004}00004\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Vardas\ \ \ \ \ \ \ \ \ \ \ \ \ \ Pavarde\ \ \ \ \ \ \ \ Galutinis(vid.)\ /\ Galutinis(med.)"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00005}00005\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00006}00006\ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;i<\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.size();i++)\{}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00007}00007\ \ \ \ \ cout\ <<\ \mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}[i];}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00012}\mbox{\hyperlink{bibl_8h_a360cbbc430a9f0929c00f6a46abc9b82}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spausdina_8cpp_a6862b577e33b873ad8d265d53b92186e}{spausdinaFaila}}(vector\ <stud>\ \&\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}},\ \textcolor{keywordtype}{string}\ failas)\{}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00013}00013\ \ \ \ \ std::ofstream\ rf\ (\textcolor{stringliteral}{"{}../../"{}}+failas);}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00014}00014\ \ \ \ \ rf\ <<\ \textcolor{stringliteral}{"{}Vardas\ \ \ \ \ \ \ \ \ \ \ \ \ \ Pavarde\ \ \ \ \ \ \ \ Galutinis(vid.)\ /\ Galutinis(med.)"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00015}00015\ \ \ \ \ rf\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00016}00016\ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;i<\mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}.size();i++)\{}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00017}00017\ \ \ \ \ rf\ <<\ std::left\ <<\ setw(20)\ <<\ \mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}[i].getVardas()\ <<\ setw(15)\ <<\ \mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}[i].getPavarde()}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ <<\ setw(18)\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ \mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}[i].getGalutinisVid()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{main_8cpp_aa0ed722cefc586e2b0dcf9748f88cf11}{A}}[i].getGalutinisMed()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{spausdina_8cpp_source_l00021}00021\ \}}
+
+\end{DoxyCode}

@@ -117,19 +117,18 @@ $(function(){initNavTree('automatiskas_8cpp_source.html',''); initResizable(true
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    std::uniform_int_distribution&lt;int&gt; vardui(0,4);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::uniform_int_distribution&lt;int&gt; pazymiui(0,10);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    cout &lt;&lt; <span class="stringliteral">&quot;Iveskite studento Varda ir pavarde &quot;</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="classstud.html">stud</a> temp(<a class="code hl_variable" href="automatiskas_8cpp.html#a3c6785e3d134e450b326e895f26b02a5">Vard</a>[vardui(mt)],<a class="code hl_variable" href="automatiskas_8cpp.html#a2de52c5aeccb54285eb5c40dcb6cc17f">Pava</a>[vardui(mt)]);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_class" href="classstud.html">stud</a> temp(<a class="code hl_variable" href="automatiskas_8cpp.html#a3c6785e3d134e450b326e895f26b02a5">Vard</a>[vardui(mt)],<a class="code hl_variable" href="automatiskas_8cpp.html#a2de52c5aeccb54285eb5c40dcb6cc17f">Pava</a>[vardui(mt)]);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;pazymiui(mt);i++){</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">int</span> paz=pazymiui(mt);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        temp.<a class="code hl_function" href="classstud.html#a384052d029a01b27eeb5366ef75f9df9">addTarpPazymys</a>(paz);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    temp.<a class="code hl_function" href="classstud.html#a1d0c3e4c3b061c026074303c4771dcdb">setEgzaminas</a>(pazymiui(mt));</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    temp.<a class="code hl_function" href="classstud.html#a6f83e2622616fd03e4a81eae86ce9e33">calculateGalutinis</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>.push_back(temp); </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;pazymiui(mt);i++){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">int</span> paz=pazymiui(mt);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        temp.<a class="code hl_function" href="classstud.html#a384052d029a01b27eeb5366ef75f9df9">addTarpPazymys</a>(paz);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    temp.<a class="code hl_function" href="classstud.html#a1d0c3e4c3b061c026074303c4771dcdb">setEgzaminas</a>(pazymiui(mt));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    temp.<a class="code hl_function" href="classstud.html#a6f83e2622616fd03e4a81eae86ce9e33">calculateGalutinis</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>.push_back(temp); </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 </div>
 <div class="ttc" id="aautomatiskas_8cpp_html_a2de52c5aeccb54285eb5c40dcb6cc17f"><div class="ttname"><a href="automatiskas_8cpp.html#a2de52c5aeccb54285eb5c40dcb6cc17f">Pava</a></div><div class="ttdeci">string Pava[5]</div><div class="ttdef"><b>Definition</b> <a href="#l00004">automatiskas.cpp:4</a></div></div>
 <div class="ttc" id="aautomatiskas_8cpp_html_a3c6785e3d134e450b326e895f26b02a5"><div class="ttname"><a href="automatiskas_8cpp.html#a3c6785e3d134e450b326e895f26b02a5">Vard</a></div><div class="ttdeci">string Vard[5]</div><div class="ttdef"><b>Definition</b> <a href="#l00003">automatiskas.cpp:3</a></div></div>

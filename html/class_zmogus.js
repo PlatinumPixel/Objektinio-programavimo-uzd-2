@@ -5,6 +5,7 @@ var class_zmogus =
     [ "~Zmogus", "class_zmogus.html#a6183937c7da8254430a6c99cfa89fe69", null ],
     [ "Zmogus", "class_zmogus.html#a9d2bbeaf83ead87dbb686ee04999885f", null ],
     [ "Zmogus", "class_zmogus.html#a97c679fdf47100b8d6a9a7e17d4953c2", null ],
+    [ "addTarpPazymys", "class_zmogus.html#a4191dd07446e383a2bd6f1e92449c21e", null ],
     [ "getPavarde", "class_zmogus.html#a11ee9ac120fbb7d6a4e1f4da3a602b63", null ],
     [ "getVardas", "class_zmogus.html#aaea44664c236e2fadf022f3821862499", null ],
     [ "operator=", "class_zmogus.html#a8bc6d11547d75c71a38567f750f02612", null ],

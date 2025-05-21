@@ -45,6 +45,9 @@ public:
 
     inline string getVardas() const { return vard; }
     inline string getPavarde() const { return pava; }
+
+    // Kad clase butu abstrakti, reikia padaryti virtual function
+    virtual void addTarpPazymys(int paz) = 0;
 protected:
    
     string vard;  

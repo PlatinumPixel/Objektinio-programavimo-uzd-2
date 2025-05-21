@@ -118,18 +118,14 @@ $(function(){initNavTree('spausdina_8cpp_source.html',''); initResizable(true); 
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
 </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="bibl_8h.html#a360cbbc430a9f0929c00f6a46abc9b82">   12</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="spausdina_8cpp.html#a6862b577e33b873ad8d265d53b92186e">spausdinaFaila</a>(vector &lt;stud&gt; &amp;<a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>, <span class="keywordtype">string</span> failas){</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::ofstream rf (<span class="stringliteral">&quot;../../&quot;</span>+failas);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::ofstream rf (failas);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    rf &lt;&lt; <span class="stringliteral">&quot;Vardas              Pavarde        Galutinis(vid.) / Galutinis(med.)&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    rf &lt;&lt; <span class="stringliteral">&quot;--------------------------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;<a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>.size();i++){</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    rf &lt;&lt; std::left &lt;&lt; setw(20) &lt;&lt; <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>[i].getVardas() &lt;&lt; setw(15) &lt;&lt; <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>[i].getPavarde()</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>         &lt;&lt; setw(18) &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>[i].getGalutinisVid() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>[i].getGalutinisMed() &lt;&lt; endl;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    rf &lt;&lt; <a class="code hl_variable" href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a>[i];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-</div>
 <div class="ttc" id="abibl_8h_html"><div class="ttname"><a href="bibl_8h.html">bibl.h</a></div></div>
 <div class="ttc" id="amain_8cpp_html_aa0ed722cefc586e2b0dcf9748f88cf11"><div class="ttname"><a href="main_8cpp.html#aa0ed722cefc586e2b0dcf9748f88cf11">A</a></div><div class="ttdeci">vector&lt; stud &gt; A</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00003">main.cpp:3</a></div></div>
 <div class="ttc" id="aspausdina_8cpp_html_a6862b577e33b873ad8d265d53b92186e"><div class="ttname"><a href="spausdina_8cpp.html#a6862b577e33b873ad8d265d53b92186e">spausdinaFaila</a></div><div class="ttdeci">void spausdinaFaila(vector&lt; stud &gt; &amp;A, string failas)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">spausdina.cpp:12</a></div></div>

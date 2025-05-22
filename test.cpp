@@ -119,11 +119,11 @@ void frontBackTest() {
     Vektorius<int> empty_v;
     try {
         (void)empty_v.front();
-        assert(false); // Should not reach here
+        assert(false);
     } catch (const std::out_of_range&) {}
     try {
         (void)empty_v.back();
-        assert(false); // Should not reach here
+        assert(false);
     } catch (const std::out_of_range&) {}
     std::cout << "frontBackTest sekmingas!\n";
 }

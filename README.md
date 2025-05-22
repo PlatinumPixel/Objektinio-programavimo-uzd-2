@@ -8,38 +8,72 @@ CPU: AMD Ryzen 7 8845, 8 Cores, 3,8 GHZ<br>
 RAM: 16 GB, 5600 MT/s<br>
 SSD NVMe <br>
 
-| Palyginimas su struct |             |              |            |          |
-|-----------------------|-------------|--------------|------------|----------|
-|                       |             |              |            |          |
-| 1000000               | Nuskaitymas | Išrušiavimas | Rikiavimas | Iš viso  |
-| Struct                | 2.83606     | 0.32922      | 1.80675    | 4.97203  |
-| Class                 | 3.0605      | 0.4786       | 2.9328     | 6.4719   |
-|                       |             |              |            |          |
-| 10000000              |             |              |            |          |
-| Struct                | 28.1194     | 4.53599      | 21.0747    | 53.73009 |
-| Class                 | 32.5148     | 4.6985       | 36.9629    | 74.1762  |
+3.0
+
+Šioje Programoje sukurta ir naudojama Vektoriaus klase
+Joje implementuota
+Construktoriai:
+Vektorius<typename> v       //Sukuria tuščia vektoriu
+Vektorius<typename> v(n)    //Sukuria tuščia vektoriu n dydžio
+Vektorius<typename> v(n,k)  //Sukuria vektoriu n dydžio, užpildyta k
+Vektorius<typename> v({1,2,3}) //Sukuria vektoriu kuriame yra elementai 1,2,3
+
+Destruktorius
+copy construktorius ir operacija
+move consturktorius ir operacija
+
+swap
+assign 
+shrink_to_fit
+erase
+insert
+emplace
+push_back
+pop_back
+size
+capacity
+empty
+clear
+reserve
+resize
+at
+[] operatorius
+==, !=,
+<, <=, >, >=
+begin, cbegin, rbegin, rcbegin
+end, cend, rend, rcend,
+front,
+back, 
+įprasta vektoriaus data() funckija pervardinta į storage(),
+
+Daugiau dokumentuotas klase yra pdf formatu ir doxygen html dokumentacija viduj html aplankalo užvadinta index
+
+std::vector ir Vektoriaus užpildymo laiko testavimas
 <br>
-
-
-| O1       |             |              |            |              |         |              |
-|----------|-------------|--------------|------------|--------------|---------|--------------|
-|          | Nuskaitymas | Išrušiavimas | Rikiavimas | Spausdinimas | Iš viso | Failoo Dydis |
-| 1000000  | 3.0605      | 0.4786       | 2.9328     | 4.4443       | 10.916  | 256          |
-| 10000000 | 32.5148     | 4.6985       | 36.9629    | 45.7464      | 119.923 |              |
+|           | std:vector | Vektorius | std Reallocations | Vektoriaus Reallocations |
+|-----------|------------|-----------|-------------------|--------------------------|
+| 10000     | 0.000517   | 0.000272  | 15                | 15                       |
+| 100000    | 0.003779   | 0.001009  | 18                | 18                       |
+| 1000000   | 0.035981   | 0.010968  | 21                | 21                       |
+| 10000000  | 0.287432   | 0.107743  | 25                | 25                       |
+| 100000000 | 3.30311    | 1.23185   | 28                | 28                       |
 <br>
-
-| O2       | Nuskaitymas | Išrušiavimas | Rikiavimas | Spausdinimas | Iš viso | Failo Dydis |
-|----------|-------------|--------------|------------|--------------|---------|-------------|
-| 1000000  | 1.4488      | 0.19         | 0.5033     | 4.2815       | 6.4235  | 252         |
-| 10000000 | 16.5359     | 1.7361       | 6.7056     | 49.511       | 74.4885 |             |
-
+Sukurto vektoriaus spartumas<br>
+| Vektorius |             |              |              |          |
+|-----------|-------------|--------------|--------------|----------|
+|           | Nuskaitymas | Išrušiavimas | Išrikiavimas | Iš viso  |
+| 1000      | 0.043964    | 0.00224      | 0.0056341    | 0.051769 |
+| 10000     | 0.444661    | 0.0309179    | 0.049972     | 0.525462 |
+| 100000    | 4.5369      | 0.22554      | 0.558844     | 5.32118  |
+| 1000000   | 44.3652     | 2.31514      | 5.91125      | 52.5915  |
+| 10000000  | 490.645     | 47.8489      | 61.81        | 600.3    |
 <br>
-| O3       | Nuskaitymas | Išrušiavimas | Rikiavimas | Spausdinimas | Iš viso | Failo Dydis |
-|----------|-------------|--------------|------------|--------------|---------|-------------|
-| 1000000  | 1.4647      | 0.1809       | 0.5059     | 4.344        | 6.4953  | 272         |
-| 10000000 | 15.5423     | 1.7754       | 7.0386     | 44.9865      | 69.3427 |             |
-<br>
-
-
-![alt text](images/image.png)
-<br>
+std::vector spartumas<br>
+| std Vector |             |              |              |          |
+|------------|-------------|--------------|--------------|----------|
+|            | Nuskaitymas | Išrušiavimas | Išrikiavimas | Iš viso  |
+| 1000       | 0.0644308   | 0.0022129    | 0.0074612    | 0.074028 |
+| 10000      | 0.649687    | 0.0372766    | 0.0914448    | 0.776228 |
+| 100000     | 6.62527     | 0.302673     | 0.828665     | 7.75646  |
+| 1000000    | 65.8765     | 2.76999      | 9.14181      | 77.7871  |
+| 10000000   | 697.445     | 33.2529      | 95.7009      | 826.395  |<br>

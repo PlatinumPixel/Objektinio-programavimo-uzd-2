@@ -1,0 +1,28 @@
+\doxysection{automatiskas.\+cpp}
+\hypertarget{automatiskas_8cpp_source}{}\label{automatiskas_8cpp_source}\mbox{\hyperlink{automatiskas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bibl_8h}{bibl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00003}\mbox{\hyperlink{automatiskas_8cpp_a3c6785e3d134e450b326e895f26b02a5}{00003}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{automatiskas_8cpp_a3c6785e3d134e450b326e895f26b02a5}{Vard}}[5]\ \{\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Vytautas"{}},\ \textcolor{stringliteral}{"{}Antanas"{}},\ \textcolor{stringliteral}{"{}Tomas"{}},\ \textcolor{stringliteral}{"{}Juozas"{}}\};}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00004}\mbox{\hyperlink{automatiskas_8cpp_a2de52c5aeccb54285eb5c40dcb6cc17f}{00004}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{automatiskas_8cpp_a2de52c5aeccb54285eb5c40dcb6cc17f}{Pava}}[5]\ \{\textcolor{stringliteral}{"{}Kazlauskas"{}},\ \textcolor{stringliteral}{"{}Stankevicius"{}},\ \textcolor{stringliteral}{"{}Petrauskas"{}},\ \textcolor{stringliteral}{"{}Janauskas"{}},\ \textcolor{stringliteral}{"{}Zukauskas"{}}\};}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00006}\mbox{\hyperlink{automatiskas_8cpp_a92adb54ece2bc84a6524716936451624}{00006}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{automatiskas_8cpp_a92adb54ece2bc84a6524716936451624}{automatiskas}}\ (Vektorius\ <stud>\ \&\mbox{\hyperlink{main_8cpp_ada062776758ec3a7b0eadf3acd2e6cd9}{A}})\{}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00007}00007\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00008}00008\ \ \ \ \ std::mt19937\ mt(rd());}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00009}00009\ \ \ \ \ std::uniform\_int\_distribution<int>\ vardui(0,4);}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00010}00010\ \ \ \ \ std::uniform\_int\_distribution<int>\ pazymiui(0,10);}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ temp(\mbox{\hyperlink{automatiskas_8cpp_a3c6785e3d134e450b326e895f26b02a5}{Vard}}[vardui(mt)],\mbox{\hyperlink{automatiskas_8cpp_a2de52c5aeccb54285eb5c40dcb6cc17f}{Pava}}[vardui(mt)]);}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;i<pazymiui(mt);i++)\{}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz=pazymiui(mt);}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classstud_a384052d029a01b27eeb5366ef75f9df9}{addTarpPazymys}}(paz);}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00019}00019\ \ \ \ \ temp.\mbox{\hyperlink{classstud_a1d0c3e4c3b061c026074303c4771dcdb}{setEgzaminas}}(pazymiui(mt));}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00021}00021\ \ \ \ \ temp.\mbox{\hyperlink{classstud_a6f83e2622616fd03e4a81eae86ce9e33}{calculateGalutinis}}();}
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{main_8cpp_ada062776758ec3a7b0eadf3acd2e6cd9}{A}}.push\_back(temp);\ }
+\DoxyCodeLine{\Hypertarget{automatiskas_8cpp_source_l00023}00023\ \}}
+
+\end{DoxyCode}

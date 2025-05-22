@@ -1,0 +1,86 @@
+\chapter{Objektinio-\/programavimo-\/uzd}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Objektinio-\/programavimo-\/uzd@{Objektinio-\/programavimo-\/uzd}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+Ši programa del skirtingu konteineriu laikų testavimų naudojant struktūras Kad paleist programa reikia tik paleisti run.\+bat faila
+
+CPU\+: AMD Ryzen 7 8845, 8 Cores, 3,8 GHZ~\newline
+ RAM\+: 16 GB, 5600 MT/s~\newline
+ SSD NVMe ~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Palyginimas su struct   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Palyginimas su struct   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+&&&&\\\cline{1-5}
+1000000   &Nuskaitymas   &Išrušiavimas   &Rikiavimas   &Iš viso    \\\cline{1-5}
+Struct   &2.\+83606   &0.\+32922   &1.\+80675   &4.\+97203    \\\cline{1-5}
+Class   &3.\+0605   &0.\+4786   &2.\+9328   &6.\+4719    \\\cline{1-5}
+&&&&\\\cline{1-5}
+10000000   &&&&\\\cline{1-5}
+Struct   &28.\+1194   &4.\+53599   &21.\+0747   &53.\+73009    \\\cline{1-5}
+Class   &32.\+5148   &4.\+6985   &36.\+9629   &74.\+1762   \\\cline{1-5}
+\end{longtabu}
+~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{7}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O1   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-7}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O1   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-7}
+\endhead
+&Nuskaitymas   &Išrušiavimas   &Rikiavimas   &Spausdinimas   &Iš viso   &Failoo Dydis    \\\cline{1-7}
+1000000   &3.\+0605   &0.\+4786   &2.\+9328   &4.\+4443   &10.\+916   &256    \\\cline{1-7}
+10000000   &32.\+5148   &4.\+6985   &36.\+9629   &45.\+7464   &119.\+923   &\\\cline{1-7}
+\end{longtabu}
+~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{7}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O2   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Nuskaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Išrušiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rikiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo Dydis    }\\\cline{1-7}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O2   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Nuskaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Išrušiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rikiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo Dydis    }\\\cline{1-7}
+\endhead
+1000000   &1.\+4488   &0.\+19   &0.\+5033   &4.\+2815   &6.\+4235   &252    \\\cline{1-7}
+10000000   &16.\+5359   &1.\+7361   &6.\+7056   &49.\+511   &74.\+4885   &\\\cline{1-7}
+\end{longtabu}
+
+
+~\newline
+ \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{7}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O3   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Nuskaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Išrušiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rikiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo Dydis    }\\\cline{1-7}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O3   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Nuskaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Išrušiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rikiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo Dydis    }\\\cline{1-7}
+\endhead
+1000000   &1.\+4647   &0.\+1809   &0.\+5059   &4.\+344   &6.\+4953   &272    \\\cline{1-7}
+10000000   &15.\+5423   &1.\+7754   &7.\+0386   &44.\+9865   &69.\+3427   &\\\cline{1-7}
+\end{longtabu}
+~\newline
+
+
+ ~\newline
+ 

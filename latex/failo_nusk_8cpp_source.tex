@@ -1,0 +1,35 @@
+\doxysection{failo\+Nusk.\+cpp}
+\hypertarget{failo_nusk_8cpp_source}{}\label{failo_nusk_8cpp_source}\mbox{\hyperlink{failo_nusk_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bibl_8h}{bibl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00003}\mbox{\hyperlink{bibl_8h_a536ce9a4fdb5b5d35ef3bcf2d3ae87cf}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{failo_nusk_8cpp_a551abcbe895fce7d3da1ad614389e9b1}{failoNusk}}\ (Vektorius\ <stud>\ \&\mbox{\hyperlink{main_8cpp_ada062776758ec3a7b0eadf3acd2e6cd9}{A}})\{}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keywordtype}{string}\ failas;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00006}00006\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ failo\ pavadinima\ (pvz.\ kursiokai.txt)"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ cin\ >>\ failas;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(std::filesystem::exists(failas)))\{}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Toks\ failas\ neegzistuoja,\ pabandykite\ vel"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ }
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00015}00015\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{string}\ eil;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_timer}{Timer}}\ t;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00019}00019\ \ \ \ \ std::ifstream\ df(failas);}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00020}00020\ \ \ \ \ getline(df,eil);}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{while}(getline(df,eil))\{}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ std::istringstream\ line(eil);}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstud}{stud}}\ temp(line);}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classstud_a6f83e2622616fd03e4a81eae86ce9e33}{calculateGalutinis}}();}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_ada062776758ec3a7b0eadf3acd2e6cd9}{A}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00028}00028\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Perskaityt\ ir\ suskaiciuot\ vidurkius\ uztruko\ "{}}\ <<\ t.\mbox{\hyperlink{class_timer_a6a89a613c2af9b0d1e5f7e4ba9e46c54}{elapsed}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00029}00029\ \ \ \ \ df.close();}
+\DoxyCodeLine{\Hypertarget{failo_nusk_8cpp_source_l00030}00030\ \}}
+
+\end{DoxyCode}

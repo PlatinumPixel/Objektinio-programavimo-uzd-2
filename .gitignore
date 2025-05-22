@@ -18,6 +18,8 @@
 1000000.txt
 10000000.txt
 
+/googletest
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

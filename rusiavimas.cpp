@@ -93,10 +93,10 @@ void rusiavimas(){
     cout << "Duomenis isrikiuoti uztruko " << trukme << endl;
 
     t.reset();
-    spausdinaFaila(nuskriausti,"nuskriausti "+failas);
-    spausdinaFaila(visi,"kietiakai "+failas);
-    visaTrukme+=t.elapsed();
-    cout << "Duomenis atspausdinti uztruko "<< t.elapsed()<< endl;
+    //spausdinaFaila(nuskriausti,"nuskriausti "+failas);
+    //spausdinaFaila(visi,"kietiakai "+failas);
+    //visaTrukme+=t.elapsed();
+    //cout << "Duomenis atspausdinti uztruko "<< t.elapsed()<< endl;
     cout << "Isviso uztruko: "<< visaTrukme<< endl;  
 }
 

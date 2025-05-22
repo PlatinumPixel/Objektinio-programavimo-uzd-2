@@ -20,6 +20,7 @@ void failoGen();
 void rusiavimas();
 void spausdinaFaila(Vektorius <stud> &A, string);
 void test();
+int vectorTest();
 
 bool compVardas(stud &, stud &);
 bool compPavard(stud &, stud &);

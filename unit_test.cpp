@@ -25,6 +25,15 @@ TEST(VektoriusTest, SizeValueConstructor) {
         EXPECT_EQ(v[i], 7);
 }
 
+TEST(VektoriusTest, InitializerListConstructor) {
+    Vektorius<int> v{10, 20, 30, 40};
+    EXPECT_EQ(v.size(), 4);
+    EXPECT_EQ(v[0], 10);
+    EXPECT_EQ(v[1], 20);
+    EXPECT_EQ(v[2], 30);
+    EXPECT_EQ(v[3], 40);
+}
+
 // Test copy constructor
 TEST(VektoriusTest, CopyConstructor) {
     Vektorius<int> v1(2, 9);

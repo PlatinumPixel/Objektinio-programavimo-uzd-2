@@ -9,7 +9,6 @@ void automatiskas (Vektorius <stud> &A){
     std::uniform_int_distribution<int> vardui(0,4);
     std::uniform_int_distribution<int> pazymiui(0,10);
 
-    cout << "Iveskite studento Varda ir pavarde ";
     stud temp(Vard[vardui(mt)],Pava[vardui(mt)]);
 
 

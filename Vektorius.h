@@ -63,6 +63,18 @@ public:
         }
     }
 
+        /**
+     * @brief Konstruktorius su initializer_list
+     * @param ilist - sąrašas pradinių reikšmių
+     */
+    Vektorius(std::initializer_list<T> ilist) : sz(ilist.size()), cap(ilist.size()) {
+        data = new T[cap];
+        size_t i = 0;
+        for (const auto& val : ilist) {
+            data[i++] = val;
+        }
+    }
+
 
     /**
      * @brief Destruktorius
@@ -167,6 +179,22 @@ public:
         }
         for (size_t i = 0; i < count; ++i) {
             data[i] = *first++;
+        }
+        sz = count;
+    }
+
+    /**
+     * @brief Priskiria vektoriui nauja reiksme
+     * @param ilist - inicializavimo sarasas
+     */
+    void assign( std::initializer_list<T> ilist ) {
+        size_t count = ilist.size();
+        if (count > cap) {
+            reallocate(count);
+        }
+        size_t i = 0;
+        for (const auto& item : ilist) {
+            data[i++] = item;
         }
         sz = count;
     }
@@ -530,26 +558,6 @@ public:
         return sz >= other.sz;
     } 
 
-
-    /**
-     * @brief Operatorius, lyginantis du vektorius
-     * @param other - kitas vektorius
-     * @return - strong_ordering, kuris nurodo, ar vektoriai yra lygūs, mažesni ar didesni
-     * @details Naudojamas C++20
-     */
-    auto operator<=>( const Vektorius<T>& other ) const {
-        if (sz != other.sz) {
-            return sz <=> other.sz;
-        }
-        for (size_t i = 0; i < sz; ++i) {
-            if (data[i] != other.data[i]) {
-                return data[i] <=> other.data[i];
-            }
-        }
-        return std::strong_ordering::equal;
-    }
-
-
     /**
      * @brief Gražina iteratorių, nurodantį į pirmą vektoriaus elementą
      * @return - iteratorius, nurodantis į pirmą elementą
@@ -617,7 +625,7 @@ public:
     }
 
     /**
-     * @brief Gražina vektoriaus duomenų masyvą
+     * @brief Gražina vektoriaus duomenų masyvą (taspats kaip std::vector::data())
      * @return - duomenų masyvas
      */
     T* storage() {

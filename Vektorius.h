@@ -40,6 +40,7 @@ public:
      * @brief Default construktorius, sukuria tuscia vektoriu
      */
     Vektorius() : data(nullptr), sz(0), cap(0) {}
+    
     /**
      * @brief Konstruktorius, sukuria vektoriu su nurodytu dydziu
      * @param size - norimas dydis

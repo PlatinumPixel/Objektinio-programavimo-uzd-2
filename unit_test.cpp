@@ -1,6 +1,13 @@
 #include <gtest/gtest.h>
 #include "Vektorius.h"
 
+int run_unit_tests() {
+    int argc = 1;
+    char* argv[] = { (char*)"program" };
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 // Test default constructor
 TEST(VektoriusTest, DefaultConstructor) {
     Vektorius<int> v;
@@ -210,9 +217,4 @@ TEST(VektoriusTest, FrontBackException) {
     Vektorius<int> v;
     EXPECT_THROW(v.front(), std::out_of_range);
     EXPECT_THROW(v.back(), std::out_of_range);
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }

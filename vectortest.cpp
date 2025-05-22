@@ -12,7 +12,7 @@ Timer t;
 int count = 0;
 std::vector<unsigned int> v1;
 
-for (int i = 1; i <= sz; ++i) {
+for (unsigned int i = 1; i <= sz; ++i) {
     if(v1.capacity() == v1.size()) {
         count++;
     }
@@ -25,7 +25,7 @@ count = 0;
 
 Vektorius <unsigned int> v2;
 
-for (int i = 1; i <= sz; ++i){
+for (unsigned int  i = 1; i <= sz; ++i){
     if(v2.capacity() == v2.size()) {
         count++;
     }

@@ -21,6 +21,7 @@ void rusiavimas();
 void spausdinaFaila(Vektorius <stud> &A, string);
 void test();
 int vectorTest();
+int run_unit_tests();
 
 bool compVardas(stud &, stud &);
 bool compPavard(stud &, stud &);

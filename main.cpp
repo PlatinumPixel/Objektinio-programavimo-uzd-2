@@ -15,8 +15,9 @@ int main(){
         cout << "6 - Surusiuoti faila i vargsiukus ir kietiakus " << endl;        
         cout << "7 - Baigti darba ir spausdinti " << endl;
         cout << "8 - Vektoriaus laiko testavimas atvejai " << endl;
+        cout << "9 - Vektoriaus unit testai " << endl;
         try {
-            if (!(cin>>input)||input<1 || input>8){
+            if (!(cin>>input)||input<1 || input>9){
                 cin.clear();
                 cin.ignore();
                 throw "Ivestas neteisingas simbolis";
@@ -56,9 +57,21 @@ int main(){
                     cout << "Pagal ka isrusiuoti duomenis?" << endl;
                     compare(A);
                     spausdina(A);
+                    cout << "Spauskite Enter, kad uzdaryti programa..." << endl;
+                    cin.ignore();
+                    cin.get();
                     return 0;
                 case 8:
                     vectorTest();
+                    cout << "Spauskite Enter, kad uzdaryti programa..." << endl;
+                    cin.ignore();
+                    cin.get();
+                    return 0;
+                case 9:
+                    run_unit_tests();
+                    cout << "Spauskite Enter, kad uzdaryti programa..." << endl;
+                    cin.ignore();
+                    cin.get();
                     return 0;
                 default:
                     cout << "Ivedete neteisinga simobli, pabandykit vel! :)" << endl;
@@ -71,5 +84,8 @@ int main(){
         }
     
     }
+cout << "Spauskite Enter, kad uzdaryti programa..." << endl;
+cin.ignore();
+cin.get();
  return 0;
 }

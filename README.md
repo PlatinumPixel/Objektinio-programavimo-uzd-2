@@ -46,7 +46,7 @@ front,
 back, 
 įprasta vektoriaus data() funckija pervardinta į storage(),
 
-Daugiau dokumentuotas klase yra pdf formatu ir doxygen html dokumentacija viduj html aplankalo užvadinta index
+Daugiau dokumentuotas klase yra pdf formatu
 
 std::vector ir Vektoriaus užpildymo laiko testavimas
 <br>

@@ -1,4 +1,3 @@
-@ -1,79 +0,0 @@
 # Objektinio-programavimo-uzd
 
 Ši programa del skirtingu konteineriu laikų testavimų naudojant struktūras
@@ -62,6 +61,7 @@ std::vector ir Vektoriaus užpildymo laiko testavimas
 | 100000000 | 3.30311    | 1.23185   | 28                | 28                       |
 <br>
 Sukurto vektoriaus spartumas<br>
+
 | Vektorius |             |              |              |          |
 |-----------|-------------|--------------|--------------|----------|
 |           | Nuskaitymas | Išrušiavimas | Išrikiavimas | Iš viso  |
@@ -72,6 +72,7 @@ Sukurto vektoriaus spartumas<br>
 | 10000000  | 490.645     | 47.8489      | 61.81        | 600.3    |
 <br>
 std::vector spartumas<br>
+
 | std Vector |             |              |              |          |
 |------------|-------------|--------------|--------------|----------|
 |            | Nuskaitymas | Išrušiavimas | Išrikiavimas | Iš viso  |

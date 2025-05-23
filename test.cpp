@@ -26,48 +26,74 @@ void testSettersAndGetters() {
     std::cout << "Setters ir getters testas sekmingas!\n";
 }
 
-void testCopyConstructor() {
-    stud original;
-    original.setvard("Petras");
-    original.setpava("Petraitis");
-    original.getTarp().push_back(10);
-    original.setEgzaminas(9);
-    
-    stud copy(original);
-    assert(copy.getVardas() == "Petras");
-    assert(copy.getTarp()[0] == 10);
-    std::cout << "Copy konstruktoriaus testas sekmingas!\n";
-}
-
-void testMoveConstructor() {
-    stud temp;
-    temp.setvard("Move");
-    temp.getTarp().push_back(7);
-    
-    stud moved(std::move(temp));
-    assert(moved.getVardas() == "Move");
-    assert(moved.getTarp()[0] == 7);
-    std::cout << "Move konstruktoriaus testas sekmingas!\n";
-}
-
-void testCopyAssignment() {
+void testStudCopyConstructor() {
     stud s1;
-    s1.setpava("Kebabas");
-    
+    s1.setvard("Jonas");
+    s1.setpava("Jonaitis");
+    s1.addTarpPazymys(8);
+    s1.setEgzaminas(9);
+    s1.calculateGalutinis();
+
+    stud s2(s1);
+
+    assert(s2.getVardas() == "Jonas");
+    assert(s2.getPavarde() == "Jonaitis");
+    assert(s2.getTarp() == s1.getTarp());
+    assert(s2.getEgz() == 9);
+    assert(s2.getGalutinisVid() == s1.getGalutinisVid());
+    assert(s2.getGalutinisMed() == s1.getGalutinisMed());
+}
+
+void testStudCopyAssignment() {
+    stud s1;
+    s1.setvard("Petras");
+    s1.setpava("Petraitis");
+    s1.addTarpPazymys(7);
+    s1.setEgzaminas(8);
+    s1.calculateGalutinis();
+
     stud s2;
     s2 = s1;
-    assert(s2.getPavarde() == "Kebabas");
-    std::cout << "Copy assignment testas sekmingas!\n";
+
+    assert(s2.getVardas() == "Petras");
+    assert(s2.getPavarde() == "Petraitis");
+    assert(s2.getTarp() == s1.getTarp());
+    assert(s2.getEgz() == 8);
+    assert(s2.getGalutinisVid() == s1.getGalutinisVid());
+    assert(s2.getGalutinisMed() == s1.getGalutinisMed());
 }
 
-void testMoveAssignment() {
+void testStudMoveConstructor() {
     stud s1;
-    s1.setpava("Moved");
-    
+    s1.setvard("Ona");
+    s1.setpava("Onaite");
+    s1.addTarpPazymys(10);
+    s1.setEgzaminas(10);
+    s1.calculateGalutinis();
+
+    stud s2(std::move(s1)); 
+
+    assert(s2.getVardas() == "Ona");
+    assert(s2.getPavarde() == "Onaite");
+    assert(s2.getEgz() == 10);
+
+}
+
+void testStudMoveAssignment() {
+    stud s1;
+    s1.setvard("Ieva");
+    s1.setpava("Ievaite");
+    s1.addTarpPazymys(6);
+    s1.setEgzaminas(7);
+    s1.calculateGalutinis();
+
     stud s2;
-    s2 = std::move(s1);
-    assert(s2.getPavarde() == "Moved");
-    std::cout << "Move assignment testas sekmingas!\n";
+    s2 = std::move(s1); 
+
+    assert(s2.getVardas() == "Ieva");
+    assert(s2.getPavarde() == "Ievaite");
+    assert(s2.getEgz() == 7);
+
 }
 
 void testOutput() {
@@ -93,10 +119,10 @@ void testInput() {
 void test() {
     testDefaultConstructor();
     testSettersAndGetters();
-    testCopyConstructor();
-    testMoveConstructor();
-    testCopyAssignment();
-    testMoveAssignment();
+    testStudCopyConstructor();
+    testStudCopyAssignment();
+    testStudMoveConstructor();
+    testStudMoveAssignment();
     testOutput();
     testInput();
     

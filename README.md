@@ -24,29 +24,29 @@ Destruktorius
 copy construktorius ir operacija
 move consturktorius ir operacija
 
-swap
-assign 
-shrink_to_fit
-erase
-insert
-emplace
-push_back
-pop_back
-size
-capacity
-empty
-clear
-reserve
-resize
-at
-[] operatorius
-==, !=,
-<, <=, >, >=
-begin, cbegin, rbegin, rcbegin
-end, cend, rend, rcend,
-front,
-back, 
-įprasta vektoriaus data() funckija pervardinta į storage(),
+swap<br>
+assign<br> 
+shrink_to_fit<br>
+erase<br>
+insert<br>
+emplace<br>
+push_back<br>
+pop_back<br>
+size<br>
+capacity<br>
+empty<br>
+clear<br>
+reserve<br>
+resize<br>
+at<br>
+[] operatorius<br>
+==, !=,<br>
+<, <=, >, >=<br>
+begin, cbegin, rbegin, rcbegin<br>
+end, cend, rend, rcend,<br>
+front,<br>
+back, <br>
+įprasta vektoriaus data() funckija pervardinta į storage(),<br>
 
 Daugiau dokumentuotas klase yra pdf formatu
 

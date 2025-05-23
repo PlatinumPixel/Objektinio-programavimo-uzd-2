@@ -12,17 +12,17 @@ SSD NVMe <br>
 
 3.0
 
-Šioje Programoje sukurta ir naudojama Vektoriaus klase
-Joje implementuota
-Construktoriai:
-Vektorius<typename> v       //Sukuria tuščia vektoriu
-Vektorius<typename> v(n)    //Sukuria tuščia vektoriu n dydžio
-Vektorius<typename> v(n,k)  //Sukuria vektoriu n dydžio, užpildyta k
-Vektorius<typename> v({1,2,3}) //Sukuria vektoriu kuriame yra elementai 1,2,3
+Šioje Programoje sukurta ir naudojama Vektoriaus klase<br>
+Joje implementuota<br>
+Construktoriai:<br>
+Vektorius<typename> v       //Sukuria tuščia vektoriu<br>
+Vektorius<typename> v(n)    //Sukuria tuščia vektoriu n dydžio<br>
+Vektorius<typename> v(n,k)  //Sukuria vektoriu n dydžio, užpildyta k<br>
+Vektorius<typename> v({1,2,3}) //Sukuria vektoriu kuriame yra elementai 1,2,3<br>
 
-Destruktorius
-copy construktorius ir operacija
-move consturktorius ir operacija
+Destruktorius<br>
+copy construktorius ir operacija<br>
+move consturktorius ir operacija<br>
 
 swap<br>
 assign<br> 

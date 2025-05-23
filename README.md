@@ -48,7 +48,7 @@ front,<br>
 back, <br>
 įprasta vektoriaus data() funckija pervardinta į storage(),<br>
 
-Daugiau dokumentuotas klase yra pdf formatu
+Daugiau dokumentuota klase yra pdf formatu
 
 std::vector ir Vektoriaus užpildymo laiko testavimas
 <br>
